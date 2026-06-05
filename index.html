@@ -321,82 +321,93 @@
 
     .about-section {
       min-height: auto;
-      padding-top: 70px;
+      padding-top: 74px;
       padding-bottom: 90px;
       background: #ffffff;
+      overflow: hidden;
     }
 
-    .about-editorial {
+    .about-hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.7fr 0.75fr;
+      grid-template-columns: minmax(0, 1.25fr) 320px;
       gap: 28px;
-      align-items: start;
+      align-items: end;
     }
 
-    .about-title-stack {
+    .about-display {
+      position: relative;
+      min-height: 720px;
       display: flex;
-      flex-direction: column;
-      gap: 0;
-      padding-top: 8px;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 40px;
     }
 
-    .about-title-stack span {
-      display: block;
-      font-size: clamp(3.8rem, 10vw, 8.9rem);
-      line-height: 0.86;
-      letter-spacing: -0.09em;
-      text-transform: uppercase;
+    .about-big-title {
+      position: relative;
+      width: min(100%, 980px);
+      margin-left: auto;
+      font-size: clamp(4.6rem, 12vw, 10.8rem);
+      line-height: 0.84;
+      letter-spacing: -0.11em;
       font-weight: 800;
+      text-transform: uppercase;
       color: #111111;
     }
 
-    .about-center-image {
-      margin-top: 20px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #f3f3f1;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(17,17,17,0.06);
-      min-height: 520px;
+    .about-big-title .line {
+      display: block;
     }
 
-    .about-center-image img {
+    .about-inline-image {
+      position: absolute;
+      width: clamp(190px, 18vw, 280px);
+      height: clamp(120px, 10vw, 180px);
+      right: 16%;
+      top: 42%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(17,17,17,0.06);
+      background: #f2f2f0;
+    }
+
+    .about-inline-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .about-side {
+    .about-side-copy {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 18px;
-      padding-top: 22px;
+      padding-bottom: 60px;
     }
 
-    .about-side-image {
+    .about-side-photo {
+      width: 100%;
+      height: 260px;
       border-radius: 18px;
       overflow: hidden;
-      background: #f3f3f1;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(17,17,17,0.06);
-      height: 220px;
+      background: #f2f2f0;
     }
 
-    .about-side-image img {
+    .about-side-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .about-copy {
-      max-width: 24rem;
-    }
-
-    .about-copy p {
+    .about-side-copy p {
       font-size: 1rem;
-      line-height: 1.55;
+      line-height: 1.65;
       color: #111111;
       font-weight: 700;
+      max-width: 26ch;
     }
 
     @keyframes floatCard {
@@ -408,6 +419,32 @@
       }
     }
 
+    @media (max-width: 1180px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .about-display {
+        min-height: 560px;
+        justify-content: flex-start;
+        padding-right: 0;
+      }
+
+      .about-big-title {
+        margin-left: 0;
+      }
+
+      .about-inline-image {
+        right: 10%;
+        top: 48%;
+      }
+
+      .about-side-copy {
+        padding-bottom: 0;
+        max-width: 420px;
+      }
+    }
+
     @media (max-width: 1100px) {
       .home-visual-wrap {
         height: 520px;
@@ -415,18 +452,6 @@
 
       .home-video-card {
         inset: 44px 70px 24px 70px;
-      }
-
-      .about-editorial {
-        grid-template-columns: 1fr;
-      }
-
-      .about-center-image {
-        min-height: 420px;
-      }
-
-      .about-side {
-        padding-top: 0;
       }
     }
 
@@ -483,6 +508,22 @@
       .floating-image {
         min-height: 140px;
       }
+
+      .about-display {
+        min-height: 460px;
+      }
+
+      .about-big-title {
+        font-size: clamp(4rem, 14vw, 8rem);
+      }
+
+      .about-inline-image {
+        position: absolute;
+        width: 180px;
+        height: 120px;
+        right: 6%;
+        top: 48%;
+      }
     }
 
     @media (max-width: 640px) {
@@ -508,8 +549,19 @@
         grid-column: auto;
       }
 
-      .about-title-stack span {
-        font-size: clamp(3rem, 16vw, 5rem);
+      .about-display {
+        min-height: 360px;
+      }
+
+      .about-inline-image {
+        width: 140px;
+        height: 92px;
+        right: 2%;
+        top: 52%;
+      }
+
+      .about-side-copy p {
+        max-width: 100%;
       }
     }
   </style>
@@ -583,27 +635,26 @@
 
     <section id="about" class="section about-section">
       <div class="container">
-        <div class="about-editorial">
-          <div class="about-title-stack">
-            <span>DENTAL</span>
-            <span>ADS</span>
-            <span>PAID</span>
+        <div class="about-hero">
+          <div class="about-display">
+            <div class="about-big-title">
+              <span class="line">DENTAL</span>
+              <span class="line">ADS PAID</span>
+
+              <figure class="about-inline-image">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80" alt="Dental ads image" />
+              </figure>
+            </div>
           </div>
 
-          <figure class="about-center-image">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" alt="Dentist portrait" />
-          </figure>
-
-          <div class="about-side">
-            <figure class="about-side-image">
-              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80" alt="Dental office detail" />
+          <div class="about-side-copy">
+            <figure class="about-side-photo">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Dentist portrait" />
             </figure>
 
-            <div class="about-copy">
-              <p>
-                We create high-converting paid ad campaigns for dental practices that want more qualified Spanish-speaking patients, clearer positioning, and stronger local growth.
-              </p>
-            </div>
+            <p>
+              We run paid ad campaigns for dental practices that want more qualified Spanish-speaking patients, stronger local reach, and better appointment flow.
+            </p>
           </div>
         </div>
       </div>
