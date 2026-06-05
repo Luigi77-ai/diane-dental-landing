@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,33 +25,10 @@
       --line: rgba(20, 32, 43, 0.12);
       --accent: #4d8fbe;
       --accent-deep: #336f99;
-      --accent-soft: #dcecf8;
       --white: #ffffff;
-
-      --radius-sm: 10px;
       --radius-md: 18px;
       --radius-lg: 28px;
       --shadow: 0 24px 70px rgba(34, 62, 84, 0.08);
-
-      --space-1: 4px;
-      --space-2: 8px;
-      --space-3: 12px;
-      --space-4: 16px;
-      --space-5: 20px;
-      --space-6: 24px;
-      --space-8: 32px;
-      --space-10: 40px;
-      --space-12: 48px;
-      --space-16: 64px;
-      --space-20: 80px;
-
-      --text-xs: clamp(0.75rem, 0.72rem + 0.2vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 1rem);
-      --text-base: clamp(1rem, 0.97rem + 0.2vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1.02rem + 0.45vw, 1.4rem);
-      --text-xl: clamp(1.45rem, 1.2rem + 0.9vw, 2.1rem);
-      --text-2xl: clamp(2.5rem, 2rem + 2.2vw, 5rem);
-
       --container: 1180px;
       --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -63,7 +40,6 @@
       background: var(--bg);
       color: var(--text);
       font-family: "Inter", sans-serif;
-      font-size: var(--text-base);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -79,26 +55,24 @@
     }
 
     .eyebrow {
-      margin: 0 0 var(--space-3);
+      margin: 0 0 12px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      font-size: var(--text-xs);
+      font-size: 12px;
       color: var(--muted);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     h1, h2, h3 {
-      margin: 0 0 var(--space-3);
-      font-family: "Inter", sans-serif;
+      margin: 0 0 12px;
       font-weight: 900;
-      line-height: 0.96;
-      letter-spacing: -0.07em;
-      color: var(--text);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
       text-transform: uppercase;
     }
 
     p {
-      margin: 0 0 var(--space-3);
+      margin: 0 0 12px;
       color: var(--muted);
       max-width: 68ch;
     }
@@ -106,7 +80,7 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 50;
       backdrop-filter: blur(16px);
       background: rgba(244, 248, 251, 0.94);
       border-bottom: 1px solid var(--line);
@@ -116,54 +90,35 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--space-4);
-      min-height: 88px;
+      min-height: 84px;
+      gap: 16px;
     }
 
     .brand {
-      display: inline-flex;
-      align-items: center;
+      font-size: 1.1rem;
       font-weight: 900;
       letter-spacing: -0.04em;
-      font-size: 1.15rem;
     }
 
     .nav {
       display: flex;
-      gap: var(--space-5);
-      font-size: var(--text-sm);
+      gap: 20px;
       color: var(--muted);
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 600;
     }
-
-    .nav a {
-      position: relative;
-      padding-block: 6px;
-    }
-
-    .nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--text);
-      transition: width var(--transition);
-    }
-
-    .nav a:hover::after { width: 100%; }
 
     .hero {
       position: relative;
-      min-height: 94vh;
+      min-height: 95vh;
       display: flex;
       align-items: center;
       overflow: hidden;
       background: #1b2d3d;
     }
 
-    .hero-video {
+    .hero-video,
+    .video-bg {
       position: absolute;
       inset: 0;
       z-index: 0;
@@ -177,7 +132,8 @@
       object-fit: cover;
     }
 
-    .hero-overlay {
+    .hero-overlay,
+    .video-overlay {
       position: absolute;
       inset: 0;
       z-index: 1;
@@ -190,66 +146,61 @@
       position: relative;
       z-index: 2;
       width: 100%;
-      padding: clamp(56px, 8vw, 100px) 0;
+      padding: 80px 0;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.06fr 0.94fr;
-      gap: clamp(28px, 5vw, 64px);
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 48px;
       align-items: center;
     }
 
     .hero-copy {
       color: var(--white);
-      max-width: 900px;
       position: relative;
       z-index: 3;
     }
 
     .hero-copy .eyebrow {
       color: rgba(255,255,255,.78);
-      margin-bottom: 18px;
     }
 
     .hero-title {
-      margin: 0 0 var(--space-4);
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
+      margin-bottom: 18px;
     }
 
     .hero-line-wrap {
-      overflow: hidden;
       display: block;
+      overflow: hidden;
     }
 
     .hero-line {
       display: block;
-      font-family: "Inter", sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: -0.08em;
-      line-height: 0.88;
       color: var(--white);
-      font-size: clamp(2.8rem, 6.4vw, 7.4rem);
+      font-size: clamp(2.6rem, 6.2vw, 7.2rem);
+      line-height: 0.88;
+      letter-spacing: -0.08em;
       transform: translateY(120%);
       opacity: 0;
       animation: riseUp 1s cubic-bezier(0.16,1,0.3,1) forwards;
       text-shadow: 0 16px 40px rgba(0,0,0,.18);
     }
 
-    .hero-line.line-1 { animation-delay: .08s; }
-    .hero-line.line-2 { animation-delay: .24s; }
-    .hero-line.line-3 { animation-delay: .4s; }
+    .line-1 { animation-delay: .08s; }
+    .line-2 { animation-delay: .24s; }
+    .line-3 { animation-delay: .4s; }
 
     @keyframes riseUp {
       0% { transform: translateY(120%); opacity: 0; }
       100% { transform: translateY(0); opacity: 1; }
     }
 
-    .hero-copy p.hero-subcopy {
-      color: rgba(255,255,255,0.84);
+    .hero-subcopy {
+      color: rgba(255,255,255,.84);
       max-width: 34rem;
       margin-top: 22px;
     }
@@ -257,8 +208,8 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-3);
-      margin-top: var(--space-5);
+      gap: 12px;
+      margin-top: 22px;
     }
 
     .btn {
@@ -269,9 +220,9 @@
       padding: 0 20px;
       border-radius: 999px;
       border: 1px solid transparent;
+      font-weight: 700;
       cursor: pointer;
       transition: all var(--transition);
-      font-weight: 600;
     }
 
     .btn-primary {
@@ -291,10 +242,6 @@
       color: var(--white);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.14);
-    }
-
     .hero-media {
       position: relative;
       min-height: 620px;
@@ -306,17 +253,18 @@
       overflow: hidden;
       border-radius: var(--radius-lg);
       box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(6px);
     }
 
-    .hero-image-main { inset: 0 12% 0 0; }
+    .hero-image-main {
+      inset: 0 12% 0 0;
+    }
+
     .hero-image-float {
       width: 40%;
       right: 0;
       bottom: 7%;
-      border-radius: 22px;
       border: 8px solid rgba(244, 248, 251, 0.92);
+      border-radius: 22px;
     }
 
     .hero-image-main img,
@@ -334,56 +282,33 @@
       width: clamp(200px, 23vw, 340px);
       pointer-events: none;
       filter: drop-shadow(0 18px 32px rgba(0,0,0,.18));
-      opacity: .95;
+      opacity: .96;
     }
 
-    .shared-luxury-band {
+    .shared-band {
       position: relative;
       overflow: hidden;
-      padding: clamp(56px, 8vw, 100px) 0;
-      isolation: isolate;
-    }
-
-    .shared-luxury-band::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
+      padding: 84px 0;
       background:
-        linear-gradient(rgba(244, 248, 251, 0.84), rgba(244, 248, 251, 0.84)),
+        linear-gradient(rgba(244, 248, 251, 0.86), rgba(244, 248, 251, 0.86)),
         linear-gradient(135deg, #edf5fb 0%, #f8fbfe 100%);
-    }
-
-    .shared-luxury-band::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(77, 143, 190, 0.10), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(77, 143, 190, 0.08), transparent 28%);
-      pointer-events: none;
-    }
-
-    .band-block + .band-block {
-      margin-top: clamp(48px, 7vw, 84px);
     }
 
     .section-head {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: var(--space-8);
-      margin-bottom: var(--space-8);
+      gap: 32px;
+      margin-bottom: 32px;
       align-items: end;
     }
 
     .section-head h2 {
-      font-size: var(--text-xl);
+      font-size: clamp(1.6rem, 2vw, 2.3rem);
       max-width: 12ch;
     }
 
     .section-lead {
-      font-size: clamp(1.02rem, 0.96rem + 0.35vw, 1.18rem);
+      font-size: 1.05rem;
       line-height: 1.75;
       color: #546678;
       max-width: 56ch;
@@ -416,7 +341,7 @@
       color: var(--text);
       cursor: pointer;
       font-size: 22px;
-      font-weight: 700;
+      font-weight: 800;
       transition: transform var(--transition), background var(--transition);
       box-shadow: 0 10px 30px rgba(34,62,84,.06);
     }
@@ -445,7 +370,7 @@
 
     .card {
       position: relative;
-      background: rgba(251, 253, 255, 0.88);
+      background: rgba(251, 253, 255, 0.9);
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -460,7 +385,8 @@
 
     .tooth-ornament {
       position: absolute;
-      inset: 14px 14px auto auto;
+      top: 14px;
+      right: 14px;
       width: 92px;
       height: 112px;
       opacity: .18;
@@ -501,10 +427,10 @@
       animation: bracePulse 2.8s ease-in-out infinite;
     }
 
-    .brace-dot.d1 { left: 18px; animation-delay: 0s; }
-    .brace-dot.d2 { left: 38px; animation-delay: .22s; }
-    .brace-dot.d3 { right: 38px; animation-delay: .44s; }
-    .brace-dot.d4 { right: 18px; animation-delay: .66s; }
+    .d1 { left: 18px; animation-delay: 0s; }
+    .d2 { left: 38px; animation-delay: .22s; }
+    .d3 { right: 38px; animation-delay: .44s; }
+    .d4 { right: 18px; animation-delay: .66s; }
 
     @keyframes floatTooth {
       0%,100% { transform: translateY(0px) rotate(0deg); }
@@ -542,119 +468,34 @@
       font-size: 11px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 800;
       z-index: 2;
     }
 
     .card-body {
-      padding: var(--space-5);
+      padding: 20px;
       position: relative;
       z-index: 1;
     }
 
     .card-title {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       margin-bottom: 8px;
     }
 
     .card-price {
       color: var(--text);
-      font-weight: 700;
-      margin-top: var(--space-3);
-      margin-bottom: var(--space-4);
+      font-weight: 800;
+      margin-top: 12px;
+      margin-bottom: 16px;
     }
 
     .text-link {
-      font-size: var(--text-sm);
+      font-size: 14px;
       color: var(--text);
       text-decoration: underline;
       text-underline-offset: 4px;
-      font-weight: 600;
-    }
-
-    .story-block {
-      position: relative;
-      min-height: 620px;
-      overflow: hidden;
-    }
-
-    .story-values {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .story-value {
-      position: absolute;
-      font-size: clamp(4.2rem, 3rem + 3vw, 6.8rem);
-      font-weight: 900;
-      letter-spacing: -0.05em;
-      text-transform: uppercase;
-      color: rgba(16, 40, 63, 0.18);
-      line-height: 0.9;
-      white-space: nowrap;
-      opacity: 0;
-      animation: storyPulse 6.8s ease-in-out infinite;
-      text-shadow: 0 0 1px rgba(0, 0, 0, 0.06);
-    }
-
-    .story-value.value-1  { top: 4%;  left: 34%; animation-delay: 0s; }
-    .story-value.value-2  { top: 12%; left: 58%; animation-delay: 0.5s; }
-    .story-value.value-3  { top: 22%; right: 4%; animation-delay: 1s; }
-    .story-value.value-4  { top: 34%; left: 30%; animation-delay: 1.5s; }
-    .story-value.value-5  { top: 42%; left: 52%; animation-delay: 2s; }
-    .story-value.value-6  { top: 50%; right: 2%; animation-delay: 2.5s; }
-    .story-value.value-7  { bottom: 10%; left: 46%; animation-delay: 3s; }
-    .story-value.value-8  { bottom: 4%;  left: 62%; animation-delay: 3.5s; }
-    .story-value.value-9  { bottom: 1%;  right: 4%; animation-delay: 4s; }
-
-    @keyframes storyPulse {
-      0% { opacity: 0; transform: scale(0.96); }
-      10% { opacity: 0.18; transform: scale(1); }
-      28% { opacity: 0.30; transform: scale(1); }
-      46% { opacity: 0.24; transform: scale(1.015); }
-      64% { opacity: 0.14; transform: scale(1.02); }
-      100% { opacity: 0; transform: scale(1.03); }
-    }
-
-    .story-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(24px, 4vw, 64px);
-      align-items: center;
-      min-height: 620px;
-    }
-
-    .story-image {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      background: rgba(251, 253, 255, 0.78);
-      position: relative;
-      z-index: 2;
-    }
-
-    .story-copy-wrap {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .story-copy {
-      position: relative;
-      z-index: 2;
-      background: rgba(251, 253, 255, 0.78);
-      border: 1px solid rgba(20, 32, 43, 0.1);
-      border-radius: var(--radius-lg);
-      padding: clamp(20px, 3vw, 32px);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 20px 50px rgba(34, 62, 84, 0.08);
+      font-weight: 700;
     }
 
     .video-band {
@@ -662,22 +503,7 @@
       overflow: hidden;
       color: var(--white);
       background: #102131;
-      padding: clamp(56px, 8vw, 100px) 0;
-    }
-
-    .video-band .video-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-
-    .video-band .video-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(to right, rgba(8, 21, 33, 0.76), rgba(8, 21, 33, 0.44)),
-        linear-gradient(to top, rgba(8, 21, 33, 0.54), rgba(8, 21, 33, 0.16));
+      padding: 84px 0;
     }
 
     .video-band .container {
@@ -689,18 +515,14 @@
     .video-band h2,
     .video-band h3 { color: var(--white); }
 
-    .video-band .eyebrow { color: rgba(255,255,255,0.76); }
-    .video-band p { color: rgba(255,255,255,0.84); }
-    .video-band .section-lead { color: rgba(255,255,255,0.9); }
-
-    .lookbook-block {
-      margin-bottom: clamp(40px, 6vw, 72px);
-    }
+    .video-band p,
+    .video-band .section-lead { color: rgba(255,255,255,0.88); }
 
     .lookbook-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr 0.9fr;
-      gap: var(--space-4);
+      gap: 16px;
+      margin-bottom: 40px;
     }
 
     .lookbook-item {
@@ -709,7 +531,6 @@
       min-height: 240px;
       background: rgba(255,255,255,0.14);
       border: 1px solid rgba(255,255,255,0.14);
-      backdrop-filter: blur(4px);
     }
 
     .lookbook-item img {
@@ -722,10 +543,10 @@
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.16);
       border-radius: var(--radius-lg);
-      padding: clamp(24px, 4vw, 44px);
+      padding: 32px;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: var(--space-6);
+      gap: 24px;
       align-items: center;
       box-shadow: 0 24px 70px rgba(0,0,0,0.16);
       backdrop-filter: blur(14px);
@@ -733,7 +554,7 @@
 
     .signup {
       display: flex;
-      gap: var(--space-3);
+      gap: 12px;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -754,7 +575,7 @@
     }
 
     .site-footer {
-      padding: var(--space-8) 0;
+      padding: 32px 0;
       border-top: 1px solid var(--line);
     }
 
@@ -762,31 +583,31 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--space-4);
+      gap: 16px;
       color: var(--muted);
-      font-size: var(--text-sm);
+      font-size: 14px;
     }
 
     .footer-links {
       display: flex;
-      gap: var(--space-4);
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     @media (max-width: 980px) {
       .hero-grid,
       .section-head,
-      .story-grid,
-      .cta-panel,
-      .lookbook-grid {
+      .lookbook-grid,
+      .cta-panel {
         grid-template-columns: 1fr;
       }
 
-      .hero { min-height: auto; }
-      .hero-inner { padding: 72px 0 64px; }
+      .hero {
+        min-height: auto;
+      }
 
-      .hero-line {
-        font-size: clamp(2.5rem, 9vw, 4.8rem);
+      .hero-inner {
+        padding: 72px 0 64px;
       }
 
       .hero-media {
@@ -796,30 +617,6 @@
 
       .hero-image-main { inset: 0 10% 0 0; }
       .hero-image-float { width: 42%; }
-      .hero-doctor {
-        width: 190px;
-        right: 4px;
-      }
-
-      .story-block,
-      .story-grid { min-height: auto; }
-
-      .story-block { padding: 24px 0; }
-
-      .story-value {
-        font-size: clamp(2.8rem, 2.1rem + 4vw, 4.6rem);
-        color: rgba(16, 40, 63, 0.15);
-      }
-
-      .story-value.value-1  { top: 4%;  left: 26%; }
-      .story-value.value-2  { top: 12%; left: 50%; }
-      .story-value.value-3  { top: 22%; right: 2%; }
-      .story-value.value-4  { top: 36%; left: 24%; }
-      .story-value.value-5  { top: 46%; left: 48%; }
-      .story-value.value-6  { top: 56%; right: 0; }
-      .story-value.value-7  { bottom: 10%; left: 38%; }
-      .story-value.value-8  { bottom: 4%;  left: 54%; }
-      .story-value.value-9  { bottom: 0;   right: 2%; }
 
       .service-slide {
         min-width: calc(50% - 10px);
@@ -830,43 +627,19 @@
     }
 
     @media (max-width: 640px) {
-      .header-inner { min-height: 78px; }
-
       .hero-media { min-height: 430px; }
-      .hero-image-main { inset: 0 0 0 0; }
+      .hero-image-main { inset: 0; }
       .hero-image-float {
         width: 44%;
-        bottom: -4%;
         right: 4%;
+        bottom: -4%;
       }
       .hero-doctor {
         width: 145px;
-        opacity: .88;
       }
-
-      .hero-line {
-        font-size: clamp(2.2rem, 11vw, 3.7rem);
-      }
-
       .service-slide {
         min-width: 100%;
       }
-
-      .story-value {
-        font-size: clamp(2rem, 1.5rem + 3vw, 3.2rem);
-        color: rgba(16, 40, 63, 0.14);
-      }
-
-      .story-value.value-1  { top: 5%;  left: 18%; }
-      .story-value.value-2  { top: 14%; left: 40%; }
-      .story-value.value-3  { top: 24%; right: 0; }
-      .story-value.value-4  { top: 38%; left: 18%; }
-      .story-value.value-5  { top: 48%; left: 40%; }
-      .story-value.value-6  { top: 58%; right: -1%; }
-      .story-value.value-7  { bottom: 10%; left: 30%; }
-      .story-value.value-8  { bottom: 4%;  left: 46%; }
-      .story-value.value-9  { bottom: 0;   right: 2%; }
-
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -877,13 +650,9 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="Diane Dental Growth home">
-        Diane Dental Growth
-      </a>
-
+      <a href="#top" class="brand">Diane Dental Growth</a>
       <nav class="nav" aria-label="Primary">
         <a href="#collection">Services</a>
-        <a href="#story">Approach</a>
         <a href="#lookbook">Proof</a>
         <a href="#drop">Contact</a>
       </nav>
@@ -897,6 +666,7 @@
           <source src="https://cdn.coverr.co/videos/coverr-dentist-working-with-patient-1560678661483?download=1080p" type="video/mp4" />
         </video>
       </div>
+
       <div class="hero-overlay"></div>
 
       <img
@@ -938,9 +708,9 @@
       </div>
     </section>
 
-    <section class="shared-luxury-band">
+    <section class="shared-band">
       <div class="container">
-        <div id="collection" class="band-block">
+        <div id="collection">
           <div class="section-head">
             <div>
               <p class="eyebrow">Services</p>
@@ -1082,39 +852,6 @@
             </div>
           </div>
         </div>
-
-        <div id="story" class="band-block story-block">
-          <div class="story-values" aria-hidden="true">
-            <span class="story-value value-1">Trust</span>
-            <span class="story-value value-2">Clarity</span>
-            <span class="story-value value-3">Growth</span>
-            <span class="story-value value-4">Care</span>
-            <span class="story-value value-5">Family</span>
-            <span class="story-value value-6">Visibility</span>
-            <span class="story-value value-7">Local</span>
-            <span class="story-value value-8">Dental</span>
-            <span class="story-value value-9">Bilingual</span>
-          </div>
-
-          <div class="story-grid">
-            <div class="story-image">
-              <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=80" alt="Dental practice branding and patient trust" />
-            </div>
-
-            <div class="story-copy-wrap">
-              <div class="story-copy">
-                <p class="eyebrow">Approach</p>
-                <h2>Premium positioning for practices that want stronger trust.</h2>
-                <p>
-                  This concept reframes Diane’s offer into a more focused dental experience that feels specific, polished, and credible to the right kind of practice.
-                </p>
-                <p>
-                  Clean structure, better niche relevance, and a more intentional brand tone help the landing feel less generic and more conversion-ready.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1124,33 +861,32 @@
           <source src="https://cdn.coverr.co/videos/coverr-woman-at-a-dentist-appointment-6128/1080p.mp4" type="video/mp4" />
         </video>
       </div>
+
       <div class="video-overlay"></div>
 
       <div class="container">
-        <div class="lookbook-block">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Proof</p>
-              <h2>Built to feel more relevant than a generic agency page.</h2>
-            </div>
-            <div>
-              <p class="section-lead">
-                This layout is meant to present Diane’s work as a focused dental growth offer with a cleaner tone, stronger niche alignment, and a more premium first impression.
-              </p>
-            </div>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Proof</p>
+            <h2>Built to feel more relevant than a generic agency page.</h2>
           </div>
+          <div>
+            <p class="section-lead">
+              This layout is meant to present Diane’s work as a focused dental growth offer with a cleaner tone, stronger niche alignment, and a more premium first impression.
+            </p>
+          </div>
+        </div>
 
-          <div class="lookbook-grid">
-            <figure class="lookbook-item">
-              <img src="https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?auto=format&fit=crop&w=1200&q=80" alt="Dental campaign image 1" />
-            </figure>
-            <figure class="lookbook-item">
-              <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80" alt="Dental campaign image 2" />
-            </figure>
-            <figure class="lookbook-item">
-              <img src="https://images.unsplash.com/photo-1598257006626-5b2c3f25f78b?auto=format&fit=crop&w=1200&q=80" alt="Dental campaign image 3" />
-            </figure>
-          </div>
+        <div class="lookbook-grid">
+          <figure class="lookbook-item">
+            <img src="https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?auto=format&fit=crop&w=1200&q=80" alt="Dental campaign image 1" />
+          </figure>
+          <figure class="lookbook-item">
+            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80" alt="Dental campaign image 2" />
+          </figure>
+          <figure class="lookbook-item">
+            <img src="https://images.unsplash.com/photo-1598257006626-5b2c3f25f78b?auto=format&fit=crop&w=1200&q=80" alt="Dental campaign image 3" />
+          </figure>
         </div>
 
         <div id="drop" class="cta-panel">
@@ -1183,10 +919,12 @@
   </footer>
 
   <script>
-    (function() {
+    (function () {
       const track = document.getElementById('servicesTrack');
       const prev = document.getElementById('prevService');
       const next = document.getElementById('nextService');
+      if (!track || !prev || !next) return;
+
       const slides = Array.from(track.children);
       let index = 0;
 
@@ -1204,6 +942,7 @@
 
         const slideWidth = firstSlide.getBoundingClientRect().width + gap;
         const maxIndex = Math.max(0, slides.length - perView);
+
         if (index > maxIndex) index = maxIndex;
         if (index < 0) index = 0;
 
@@ -1212,12 +951,12 @@
         next.style.opacity = index === maxIndex ? '.45' : '1';
       }
 
-      prev.addEventListener('click', function() {
+      prev.addEventListener('click', function () {
         index -= 1;
         updateSlider();
       });
 
-      next.addEventListener('click', function() {
+      next.addEventListener('click', function () {
         index += 1;
         updateSlider();
       });
