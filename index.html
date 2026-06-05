@@ -16,19 +16,19 @@
     :root {
       --bg: #ffffff;
       --text: #101010;
-      --muted: #3c4652;
+      --muted: #334055;
       --line: rgba(16, 16, 16, 0.08);
 
-      --gold: #d1ab45;
-      --gold-light: #e9cf7a;
-      --gold-soft: #fff5d7;
-      --gold-dark: #9a7420;
+      --gold: #ffd028;
+      --gold-light: #ffe36a;
+      --gold-soft: #fff6bf;
+      --gold-dark: #c99500;
 
-      --blue-deep: #0c3d92;
-      --blue: #1a67d9;
-      --blue-bright: #7cc7ff;
-      --blue-soft: #eaf6ff;
-      --blue-pale: #dff2ff;
+      --blue-deep: #003ea8;
+      --blue: #1268ff;
+      --blue-bright: #49b3ff;
+      --blue-soft: #d8eeff;
+      --blue-pale: #edf7ff;
 
       --container: 1340px;
       --shadow-soft: 0 20px 40px rgba(20, 28, 40, 0.07);
@@ -220,8 +220,8 @@
       align-items: center;
       justify-content: center;
       color: var(--gold-dark);
-      background: linear-gradient(180deg, #fff8e4 0%, #f4dfa3 100%);
-      border: 1px solid rgba(202, 166, 74, 0.28);
+      background: linear-gradient(180deg, #fff7c7 0%, #ffd73a 100%);
+      border: 1px solid rgba(201, 149, 0, 0.28);
       flex-shrink: 0;
       transition: transform var(--transition), background var(--transition), color var(--transition);
     }
@@ -339,7 +339,7 @@
 
     .work-badge:hover {
       transform: translateY(-4px);
-      background: linear-gradient(180deg, #fff9e8 0%, #ffffff 100%);
+      background: linear-gradient(180deg, #fff8db 0%, #ffffff 100%);
     }
 
     .work-badge strong {
@@ -360,8 +360,8 @@
 
     .about-section {
       background:
-        radial-gradient(circle at 18% 22%, rgba(124, 199, 255, 0.28), transparent 28%),
-        radial-gradient(circle at 82% 18%, rgba(209, 171, 69, 0.18), transparent 22%),
+        radial-gradient(circle at 18% 22%, rgba(73, 179, 255, 0.24), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(255, 208, 40, 0.18), transparent 22%),
         linear-gradient(135deg, var(--blue-soft) 0%, var(--blue-pale) 55%, #ffffff 100%);
     }
 
@@ -375,7 +375,7 @@
     .about-panel {
       min-height: 560px;
       padding: 34px;
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.74);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(16,16,16,0.08);
       box-shadow: var(--shadow-soft);
@@ -404,8 +404,8 @@
 
     .about-gallery {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      grid-template-rows: 220px 140px 160px;
+      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-rows: 220px 150px 150px 170px;
       gap: 14px;
     }
 
@@ -434,6 +434,36 @@
     .portfolio-section {
       background: #ffffff;
       overflow: hidden;
+    }
+
+    .portfolio-hero-video {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      border: 1px solid rgba(16,16,16,0.08);
+      box-shadow: var(--shadow-md);
+      margin-bottom: 26px;
+      background: #0f1725;
+    }
+
+    .portfolio-hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portfolio-hero-fade {
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 42%;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(
+        180deg,
+        rgba(8, 18, 33, 0) 0%,
+        rgba(8, 18, 33, 0.38) 35%,
+        rgba(8, 18, 33, 0.78) 100%
+      );
     }
 
     .portfolio-head {
@@ -550,7 +580,7 @@
 
     .capabilities-section {
       background:
-        linear-gradient(135deg, #ffffff 0%, #eef8ff 58%, #fff7df 100%);
+        linear-gradient(135deg, #ffffff 0%, #e9f5ff 58%, #fff9de 100%);
     }
 
     .capabilities-layout {
@@ -659,7 +689,7 @@
     }
 
     .proof-section {
-      background: linear-gradient(135deg, #eef8ff 0%, #caebff 36%, #97d7ff 70%, #fff7df 100%);
+      background: linear-gradient(135deg, #edf7ff 0%, #d0ecff 36%, #7fc4ff 70%, #fff5c9 100%);
     }
 
     .proof-grid {
@@ -697,7 +727,7 @@
     .proof-banner {
       min-height: 340px;
       padding: 22px 18px 28px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,247,223,0.84) 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,246,199,0.86) 100%);
       box-shadow: var(--shadow-soft);
       clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
       display: flex;
@@ -710,7 +740,7 @@
 
     .proof-banner:hover {
       transform: translateY(0px);
-      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(234,246,255,0.92) 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(233,245,255,0.92) 100%);
     }
 
     .proof-banner h3 {
@@ -739,7 +769,7 @@
       padding: 34px;
       border: 1px solid rgba(16,16,16,0.08);
       box-shadow: var(--shadow-md);
-      background: linear-gradient(135deg, #ffffff 0%, #eef8ff 70%, #fff8e8 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #edf7ff 70%, #fff6cf 100%);
     }
 
     .contact-card h2 {
@@ -904,7 +934,7 @@
 
       .about-gallery {
         grid-template-columns: 1fr;
-        grid-template-rows: 220px 180px 180px 180px;
+        grid-template-rows: 220px 180px 180px 180px 180px 180px;
       }
 
       .about-gallery .large,
@@ -916,6 +946,10 @@
       .portfolio-topbar {
         width: 100%;
         max-width: 100%;
+      }
+
+      .portfolio-hero-video {
+        height: 220px;
       }
     }
   </style>
@@ -1034,6 +1068,14 @@
               <img src="https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?auto=format&fit=crop&w=1000&q=80" alt="Case visual three" />
             </div>
 
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1000&q=80" alt="Case visual four" />
+            </div>
+
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Case visual five" />
+            </div>
+
             <div class="card wide">
               <video autoplay muted loop playsinline>
                 <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
@@ -1046,6 +1088,13 @@
 
     <section id="work" class="section portfolio-section">
       <div class="container">
+        <div class="portfolio-hero-video">
+          <video autoplay muted loop playsinline>
+            <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
+          </video>
+          <div class="portfolio-hero-fade"></div>
+        </div>
+
         <div class="portfolio-head">
           <div>
             <div class="eyebrow">Featured Projects</div>
