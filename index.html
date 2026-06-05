@@ -433,29 +433,26 @@
       font-size: 0.78rem;
     }
 
-    .about-gallery {
+    .about-video-stack {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      grid-template-rows: 220px 150px 150px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 250px 250px;
       gap: 14px;
+      align-self: start;
     }
 
-    .about-gallery .card {
+    .about-video-card {
       overflow: hidden;
       border: 1px solid rgba(0,48,73,0.08);
       box-shadow: var(--shadow-soft);
-      background: #f2f2f2;
+      background: #0b1220;
+      min-height: 0;
     }
 
-    .about-gallery .card img,
-    .about-gallery .card video {
+    .about-video-card video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .about-gallery .large {
-      grid-row: 1 / 3;
     }
 
     .portfolio-section {
@@ -686,6 +683,50 @@
       color: rgba(255,255,255,0.9);
     }
 
+    .capabilities-video-column {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .capabilities-video-card {
+      min-height: 250px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: var(--shadow-soft);
+      background: rgba(255,255,255,0.08);
+      position: relative;
+      backdrop-filter: blur(6px);
+    }
+
+    .capabilities-video-card.video-top {
+      min-height: 280px;
+    }
+
+    .capabilities-video-card.video-bottom {
+      min-height: 280px;
+    }
+
+    .capabilities-video-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .media-tag {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      padding: 8px 10px;
+      background: rgba(0,0,0,0.82);
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
     .capabilities-marquee {
       border-top: 1px solid rgba(255,255,255,0.18);
       border-bottom: 1px solid rgba(255,255,255,0.18);
@@ -693,6 +734,7 @@
       overflow: hidden;
       background: rgba(255,255,255,0.08);
       backdrop-filter: blur(8px);
+      margin-top: 30px;
     }
 
     .marquee {
@@ -734,50 +776,6 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: -0.03em;
-    }
-
-    .media-stack {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .media-stack .stack-card,
-    .media-feature-large {
-      min-height: 240px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow: var(--shadow-soft);
-      background: rgba(255,255,255,0.08);
-      position: relative;
-      backdrop-filter: blur(6px);
-    }
-
-    .media-stack .stack-card img,
-    .media-stack .stack-card video,
-    .media-feature-large img,
-    .media-feature-large video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .media-tag {
-      position: absolute;
-      left: 14px;
-      top: 14px;
-      padding: 8px 10px;
-      background: rgba(0,0,0,0.82);
-      color: #ffffff;
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .media-feature-large {
-      min-height: 220px;
-      margin-top: 18px;
     }
 
     .proof-section {
@@ -937,7 +935,8 @@
       background: #f2f2f2;
     }
 
-    .contact-mini-gallery img {
+    .contact-mini-gallery img,
+    .contact-mini-gallery video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -979,6 +978,15 @@
       .portfolio-side-gallery .wide {
         grid-column: auto;
       }
+
+      .about-video-stack {
+        grid-template-rows: 220px 220px;
+      }
+
+      .capabilities-video-card.video-top,
+      .capabilities-video-card.video-bottom {
+        min-height: 240px;
+      }
     }
 
     @media (max-width: 980px) {
@@ -1014,7 +1022,6 @@
         grid-column: span 12;
       }
 
-      .media-stack,
       .contact-mini-gallery,
       .portfolio-side-gallery {
         grid-template-columns: 1fr 1fr;
@@ -1022,6 +1029,10 @@
 
       .portfolio-side-gallery .wide {
         grid-column: 1 / 3;
+      }
+
+      .about-video-stack {
+        grid-template-rows: 210px 210px;
       }
     }
 
@@ -1042,7 +1053,6 @@
 
       .work-strip,
       .proof-banners,
-      .media-stack,
       .contact-mini-gallery,
       .portfolio-side-gallery,
       .portfolio-marquee-static {
@@ -1062,19 +1072,17 @@
         max-width: 100%;
       }
 
-      .about-gallery {
-        grid-template-columns: 1fr;
-        grid-template-rows: 220px 180px 180px 180px 180px;
+      .about-video-stack {
+        grid-template-rows: 190px 190px;
       }
 
-      .about-gallery .large,
+      .capabilities-video-card.video-top,
+      .capabilities-video-card.video-bottom {
+        min-height: 210px;
+      }
+
       .portfolio-side-gallery .wide {
         grid-column: auto;
-        grid-row: auto;
-      }
-
-      .media-feature-large {
-        min-height: 180px;
       }
 
       .contact-actions {
@@ -1110,13 +1118,13 @@
           <div class="hero-copy">
             <div class="eyebrow">Selected Work</div>
             <h1 class="display-title">
-              Nosotros
-              <span class="accent">Sabemos</span>
-              Lo Que
-              Hacemos
+              We
+              <span class="accent">Know</span>
+              What
+              We Do
             </h1>
             <p class="mini-copy">
-              Diseñamos presencia digital con estrategia, claridad visual y ejecución real para marcas que quieren verse más fuertes y vender mejor.
+              We build digital presence with strategy, visual clarity, and execution that helps brands look stronger and convert better.
             </p>
             <div class="hero-actions">
               <a class="cta-button" href="#work">View Projects</a>
@@ -1127,7 +1135,7 @@
           <div class="hero-media">
             <div class="hero-video">
               <video autoplay muted loop playsinline>
-                <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
+                <source src="./assets/videos/Grabación 2026-06-05 185658.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -1164,7 +1172,7 @@
             </div>
 
             <p>
-              Mostramos nuestro trabajo con intención, buen criterio visual y una estructura pensada para que cada proyecto se vea fuerte, claro y profesional.
+              We present our work with intention, strong visual judgment, and a structure designed to make every project feel clear, elevated, and professional.
             </p>
 
             <div class="hero-actions">
@@ -1173,25 +1181,16 @@
             </div>
           </div>
 
-          <div class="about-gallery">
-            <div class="card large">
-              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" alt="Case visual one" />
+          <div class="about-video-stack">
+            <div class="about-video-card">
+              <video autoplay muted loop playsinline>
+                <source src="./assets/videos/Grabación 2026-06-05 185803.mp4" type="video/mp4" />
+              </video>
             </div>
-
-            <div class="card">
-              <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1000&q=80" alt="Case visual two" />
-            </div>
-
-            <div class="card">
-              <img src="https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?auto=format&fit=crop&w=1000&q=80" alt="Case visual three" />
-            </div>
-
-            <div class="card">
-              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1000&q=80" alt="Case visual four" />
-            </div>
-
-            <div class="card">
-              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Case visual five" />
+            <div class="about-video-card">
+              <video autoplay muted loop playsinline>
+                <source src="./assets/videos/Grabación 2026-06-05 185845.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -1217,14 +1216,14 @@
 
           <div class="portfolio-side-gallery">
             <div class="gallery-card">
-              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="Featured gallery image one" />
+              <img src="./assets/images/Captura de pantalla 2026-06-05 183508.png" alt="Featured project preview one" />
             </div>
             <div class="gallery-card">
-              <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80" alt="Featured gallery image two" />
+              <img src="./assets/images/Captura de pantalla 2026-06-05 183618.png" alt="Featured project preview two" />
             </div>
             <div class="gallery-card wide">
               <video autoplay muted loop playsinline>
-                <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
+                <source src="./assets/videos/Grabación 2026-06-05 185922.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -1232,7 +1231,7 @@
 
         <div class="portfolio-grid">
           <article class="project-card large">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=80" alt="Featured project visual" />
+            <img src="./assets/images/Captura de pantalla 2026-06-05 183821.png" alt="Featured project layout one" />
             <div class="project-overlay">
               <div>
                 <strong>Diane Dental Growth</strong>
@@ -1249,12 +1248,12 @@
 
           <article class="project-card tall">
             <video autoplay muted loop playsinline>
-              <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
+              <source src="./assets/videos/Grabación 2026-06-05 185658.mp4" type="video/mp4" />
             </video>
             <div class="project-overlay">
               <div>
-                <strong>Campaign Reel Space</strong>
-                <span>Drop vertical or horizontal case video here</span>
+                <strong>Campaign Reel</strong>
+                <span>Video / Social / Conversion-Driven Creative</span>
               </div>
               <div class="project-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -1265,7 +1264,7 @@
           </article>
 
           <article class="project-card medium">
-            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80" alt="Project card two" />
+            <img src="./assets/images/Captura de pantalla 2026-06-05 184102.png" alt="Featured project layout two" />
             <div class="project-overlay">
               <div>
                 <strong>Creative Build</strong>
@@ -1281,7 +1280,7 @@
           </article>
 
           <article class="project-card medium">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" alt="Project card three" />
+            <img src="./assets/images/Captura de pantalla 2026-06-05 184144.png" alt="Featured project layout three" />
             <div class="project-overlay">
               <div>
                 <strong>Client Experience</strong>
@@ -1297,7 +1296,7 @@
           </article>
 
           <article class="project-card medium">
-            <img src="https://images.unsplash.com/photo-1598257006626-5b2c3f25f78b?auto=format&fit=crop&w=1200&q=80" alt="Project card four" />
+            <img src="./assets/images/Captura de pantalla 2026-06-05 184209.png" alt="Featured project layout four" />
             <div class="project-overlay">
               <div>
                 <strong>Media Direction</strong>
@@ -1313,11 +1312,11 @@
           </article>
 
           <article class="project-card wide">
-            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80" alt="Wide portfolio showcase" />
+            <img src="./assets/images/Captura de pantalla 2026-06-05 184304.png" alt="Wide featured case study preview" />
             <div class="project-overlay">
               <div>
-                <strong>Space For Additional Case Study</strong>
-                <span>Use this for another hero-level project or website mockup</span>
+                <strong>Additional Case Study</strong>
+                <span>High-Impact Layout / Website Showcase / Full-Funnel Creative</span>
               </div>
               <div class="project-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -1329,7 +1328,7 @@
           </article>
 
           <article class="project-card medium">
-            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80" alt="Project card five" />
+            <img src="./assets/images/Captura de pantalla 2026-06-05 184316.png" alt="Featured project layout five" />
             <div class="project-overlay">
               <div>
                 <strong>Website Refresh</strong>
@@ -1345,50 +1344,34 @@
           </article>
 
           <article class="project-card medium">
-            <img src="https://images.unsplash.com/photo-1576765608622-067973a79f53?auto=format&fit=crop&w=1200&q=80" alt="Happy Kids Pediatric Dentistry showcase" />
+            <img src="./assets/images/Captura de pantalla 2026-06-05 185001.png" alt="Featured project layout six" />
             <div class="project-overlay">
               <div>
-                <strong>Happy Kids Pediatric Dentistry</strong>
-                <span>Website / Pediatric Dental Positioning / Family-Focused Brand</span>
+                <strong>Healthcare Brand Build</strong>
+                <span>Website / Messaging / Patient-Focused Positioning</span>
               </div>
-              <a class="project-arrow" href="https://happykidspediatric.com" target="_blank" rel="noopener noreferrer" aria-label="Open Happy Kids Pediatric Dentistry website">
+              <div class="project-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                  <path d="M7 17 17 7"></path>
-                  <path d="M8 7h9v9"></path>
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
                 </svg>
-              </a>
+              </div>
             </div>
           </article>
 
           <article class="project-card medium">
-            <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1200&q=80" alt="Happy Family Dental Group showcase" />
+            <img src="./assets/images/Captura de pantalla 2026-06-05 185059.png" alt="Featured project layout seven" />
             <div class="project-overlay">
               <div>
-                <strong>Happy Family Dental Group</strong>
-                <span>Family Dentistry Website / Bilingual Messaging / Practice Growth</span>
+                <strong>Service Funnel Design</strong>
+                <span>Conversion / Layout System / Brand Consistency</span>
               </div>
-              <a class="project-arrow" href="https://www.happyfamilydentalgroup.com" target="_blank" rel="noopener noreferrer" aria-label="Open Happy Family Dental Group website">
+              <div class="project-arrow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                  <path d="M7 17 17 7"></path>
-                  <path d="M8 7h9v9"></path>
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
                 </svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="project-card medium">
-            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80" alt="Professor Posture showcase" />
-            <div class="project-overlay">
-              <div>
-                <strong>Professor Posture</strong>
-                <span>Wellness Brand / Posture Education / Digital Presence</span>
               </div>
-              <a class="project-arrow" href="https://professorposture.com" target="_blank" rel="noopener noreferrer" aria-label="Open Professor Posture website">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                  <path d="M7 17 17 7"></path>
-                  <path d="M8 7h9v9"></path>
-                </svg>
-              </a>
             </div>
           </article>
         </div>
@@ -1408,35 +1391,28 @@
             <div class="eyebrow">Capabilities</div>
             <h2>Smart Systems. Sharp Creative. Better Presence.</h2>
             <p class="mini-copy">
-              Creamos presencia digital con estrategia, ejecución visual y sistemas pensados para posicionar mejor cada marca.
+              We create digital presence with strategy, visual execution, and systems designed to position every brand more clearly.
             </p>
           </div>
 
-          <div>
-            <div class="media-stack">
-              <div class="stack-card">
-                <span class="media-tag">Photo Space</span>
-                <img src="https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?auto=format&fit=crop&w=1200&q=80" alt="Creative media sample" />
-              </div>
-
-              <div class="stack-card">
-                <span class="media-tag">Video Space</span>
-                <video autoplay muted loop playsinline>
-                  <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
-                </video>
-              </div>
+          <div class="capabilities-video-column">
+            <div class="capabilities-video-card video-top">
+              <span class="media-tag">Creative Video</span>
+              <video autoplay muted loop playsinline>
+                <source src="./assets/videos/Siempre ten presente el control dental de tus hijos, estamos Para servirte y hacer de su visita .mp4" type="video/mp4" />
+              </video>
             </div>
 
-            <div class="media-feature-large">
-              <span class="media-tag">Large Media Space</span>
+            <div class="capabilities-video-card video-bottom">
+              <span class="media-tag">Program Video</span>
               <video autoplay muted loop playsinline>
-                <source src="assets/videos/13986255_2160_3840_25fps.mp4" type="video/mp4" />
+                <source src="./assets/videos/¡Ponte los guantes y sé parte de nuestra Primera Generación de Asistentes Dentales! Estamos a po.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
         </div>
 
-        <div class="capabilities-marquee" style="margin-top:30px;">
+        <div class="capabilities-marquee">
           <div class="marquee">
             <div class="marquee-group">
               <div class="cap-item">
@@ -1581,7 +1557,7 @@
             <div class="eyebrow">Why It Works</div>
             <h2>Professional Without Feeling Overwritten</h2>
             <p>
-              Nuestra meta es mostrar calidad rápido, con una mezcla clara de estrategia, dirección visual y ejecución que se siente premium desde el primer scroll.
+              Our goal is to show quality quickly, with a clear mix of strategy, visual direction, and execution that feels premium from the first scroll.
             </p>
           </div>
 
@@ -1596,7 +1572,7 @@
                 </svg>
               </span>
               <h3>Clear Taste</h3>
-              <p>Construimos piezas con criterio visual, jerarquía limpia y una presencia de marca más sólida.</p>
+              <p>We build work with visual judgment, clean hierarchy, and stronger brand presence.</p>
             </article>
 
             <article class="proof-banner">
@@ -1607,7 +1583,7 @@
                 </svg>
               </span>
               <h3>Real Media</h3>
-              <p>Presentamos websites, fotos, video, campañas y piezas reales dentro de un sistema visual coherente.</p>
+              <p>We present websites, photography, video, campaigns, and brand work inside one consistent system.</p>
             </article>
 
             <article class="proof-banner">
@@ -1618,7 +1594,7 @@
                 </svg>
               </span>
               <h3>Fast Signal</h3>
-              <p>Hacemos que el valor del trabajo se entienda en segundos, sin depender de textos largos.</p>
+              <p>We make the value of the work clear in seconds without depending on long blocks of copy.</p>
             </article>
 
             <article class="proof-banner">
@@ -1629,8 +1605,8 @@
                   <path d="M20 7.5 12 11 4 7.5"></path>
                 </svg>
               </span>
-              <h3>Space To Grow</h3>
-              <p>Dejamos una base flexible para seguir sumando proyectos, campañas, reels y casos de estudio.</p>
+              <h3>Room To Grow</h3>
+              <p>We leave a flexible structure that can keep growing with more campaigns, reels, and case studies.</p>
             </article>
           </div>
         </div>
@@ -1644,7 +1620,7 @@
             <div class="eyebrow">Next Move</div>
             <h2>Let’s Build Something That Looks This Strong</h2>
             <p>
-              Si quieres una presencia más clara, más premium y mejor pensada para vender, aquí es donde empezamos.
+              If you want a clearer, more premium, and better-positioned digital presence, this is where we begin.
             </p>
           </div>
 
@@ -1658,13 +1634,15 @@
 
             <div class="contact-mini-gallery">
               <div class="mini">
-                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Gallery preview one" />
+                <img src="./assets/images/Captura de pantalla 2026-06-05 185114.png" alt="Next move preview one" />
               </div>
               <div class="mini">
-                <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" alt="Gallery preview two" />
+                <video autoplay muted loop playsinline>
+                  <source src="./assets/videos/Grabación 2026-06-05 185922.mp4" type="video/mp4" />
+                </video>
               </div>
               <div class="mini">
-                <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" alt="Gallery preview three" />
+                <img src="./assets/images/799a1edd6b24dccee88a23d74095a0dc.jpg" alt="Next move preview two" />
               </div>
             </div>
           </div>
