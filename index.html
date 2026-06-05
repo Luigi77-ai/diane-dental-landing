@@ -419,7 +419,7 @@
     .about-gallery {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
-      grid-template-rows: 220px 150px 150px 170px;
+      grid-template-rows: 220px 150px 150px;
       gap: 14px;
     }
 
@@ -441,10 +441,6 @@
       grid-row: 1 / 3;
     }
 
-    .about-gallery .wide {
-      grid-column: 1 / 3;
-    }
-
     .portfolio-section {
       background: #ffffff;
       overflow: hidden;
@@ -457,26 +453,30 @@
       color: #111111;
       border-top: 1px solid rgba(17,17,17,0.08);
       border-bottom: 1px solid rgba(17,17,17,0.08);
-      overflow: hidden;
       margin-bottom: 0;
       margin-top: -1px;
     }
 
-    .portfolio-marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marqueeLeft 30s linear infinite;
-      padding: 10px 0;
+    .portfolio-marquee-static {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      align-items: center;
+      min-height: 52px;
+      padding: 0 24px;
     }
 
-    .portfolio-marquee-track span {
-      white-space: nowrap;
+    .portfolio-marquee-static span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      text-align: center;
       font-size: 0.8rem;
       line-height: 1.2;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      padding-right: 44px;
     }
 
     .portfolio-inner {
@@ -763,7 +763,7 @@
     }
 
     .media-feature-large {
-      min-height: 320px;
+      min-height: 220px;
       margin-top: 18px;
     }
 
@@ -922,7 +922,8 @@
       }
 
       .work-strip,
-      .proof-banners {
+      .proof-banners,
+      .portfolio-marquee-static {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -1020,7 +1021,8 @@
       .proof-banners,
       .media-stack,
       .contact-mini-gallery,
-      .portfolio-side-gallery {
+      .portfolio-side-gallery,
+      .portfolio-marquee-static {
         grid-template-columns: 1fr;
       }
 
@@ -1039,18 +1041,17 @@
 
       .about-gallery {
         grid-template-columns: 1fr;
-        grid-template-rows: 220px 180px 180px 180px 180px 180px;
+        grid-template-rows: 220px 180px 180px 180px 180px;
       }
 
       .about-gallery .large,
-      .about-gallery .wide,
       .portfolio-side-gallery .wide {
         grid-column: auto;
         grid-row: auto;
       }
 
       .media-feature-large {
-        min-height: 240px;
+        min-height: 180px;
       }
 
       .contact-actions {
@@ -1178,12 +1179,6 @@
             <div class="card">
               <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Case visual five" />
             </div>
-
-            <div class="card wide">
-              <video autoplay muted loop playsinline>
-                <source src="./assets/videos/Grabacion-2026-06-05-142535.mp4" type="video/mp4" />
-              </video>
-            </div>
           </div>
         </div>
       </div>
@@ -1191,13 +1186,11 @@
 
     <section id="work" class="section portfolio-section">
       <div class="portfolio-marquee-bar">
-        <div class="portfolio-marquee-track">
-          <span>Space for short project labels, industries, or service tags.</span>
-          <span>Use this black bar for filters, project types, or client categories.</span>
-          <span>Space for short project labels, industries, or service tags.</span>
-          <span>Use this black bar for filters, project types, or client categories.</span>
-          <span>Space for short project labels, industries, or service tags.</span>
-          <span>Use this black bar for filters, project types, or client categories.</span>
+        <div class="portfolio-marquee-static">
+          <span>Web Design & Landing Pages</span>
+          <span>Brand Messaging & Positioning</span>
+          <span>Photo, Video & Creative Direction</span>
+          <span>Paid Media & Conversion Systems</span>
         </div>
       </div>
 
@@ -1334,6 +1327,54 @@
                   <path d="M12 5l7 7-7 7"></path>
                 </svg>
               </div>
+            </div>
+          </article>
+
+          <article class="project-card medium">
+            <img src="https://images.unsplash.com/photo-1576765608622-067973a79f53?auto=format&fit=crop&w=1200&q=80" alt="Happy Kids Pediatric Dentistry showcase" />
+            <div class="project-overlay">
+              <div>
+                <strong>Happy Kids Pediatric Dentistry</strong>
+                <span>Website / Pediatric Dental Positioning / Family-Focused Brand</span>
+              </div>
+              <a class="project-arrow" href="https://happykidspediatric.com" target="_blank" rel="noopener noreferrer" aria-label="Open Happy Kids Pediatric Dentistry website">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M7 17 17 7"></path>
+                  <path d="M8 7h9v9"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card medium">
+            <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1200&q=80" alt="Happy Family Dental Group showcase" />
+            <div class="project-overlay">
+              <div>
+                <strong>Happy Family Dental Group</strong>
+                <span>Family Dentistry Website / Bilingual Messaging / Practice Growth</span>
+              </div>
+              <a class="project-arrow" href="https://www.happyfamilydentalgroup.com" target="_blank" rel="noopener noreferrer" aria-label="Open Happy Family Dental Group website">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M7 17 17 7"></path>
+                  <path d="M8 7h9v9"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card medium">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80" alt="Professor Posture showcase" />
+            <div class="project-overlay">
+              <div>
+                <strong>Professor Posture</strong>
+                <span>Wellness Brand / Posture Education / Digital Presence</span>
+              </div>
+              <a class="project-arrow" href="https://professorposture.com" target="_blank" rel="noopener noreferrer" aria-label="Open Professor Posture website">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M7 17 17 7"></path>
+                  <path d="M8 7h9v9"></path>
+                </svg>
+              </a>
             </div>
           </article>
         </div>
