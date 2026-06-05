@@ -371,37 +371,49 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 26px;
-      align-items: stretch;
+      align-items: start;
     }
 
     .about-panel {
-      min-height: 560px;
-      padding: 34px;
+      min-height: 0;
+      padding: 24px 26px;
       background: rgba(255,255,255,0.74);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(16,16,16,0.08);
       box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 24px;
+      justify-content: flex-start;
+      gap: 16px;
+      align-self: start;
     }
 
     .about-panel h2 {
-      font-size: clamp(3.8rem, 8vw, 7rem);
-      line-height: 0.82;
-      letter-spacing: -0.11em;
+      font-size: clamp(2.4rem, 4.8vw, 4.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.09em;
       text-transform: uppercase;
       font-weight: 800;
-      max-width: 7ch;
+      max-width: 6.5ch;
     }
 
     .about-panel p {
-      max-width: 30rem;
-      font-size: 1rem;
-      line-height: 1.8;
+      max-width: 24rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
       color: var(--muted);
       font-weight: 700;
+    }
+
+    .about-panel .hero-actions {
+      margin-top: 2px;
+      gap: 10px;
+    }
+
+    .about-panel .cta-button {
+      min-height: 46px;
+      padding: 0 18px;
+      font-size: 0.78rem;
     }
 
     .about-gallery {
@@ -441,10 +453,10 @@
 
     .portfolio-marquee-bar {
       width: 100%;
-      background: #0f0f0f;
-      color: #ffffff;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: #ffd028;
+      color: #111111;
+      border-top: 1px solid rgba(17,17,17,0.08);
+      border-bottom: 1px solid rgba(17,17,17,0.08);
       overflow: hidden;
       margin-bottom: 0;
       margin-top: -1px;
@@ -859,9 +871,10 @@
 
     .contact-actions {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
       gap: 14px;
     }
 
@@ -871,6 +884,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       width: 100%;
+      flex-basis: 100%;
     }
 
     .contact-mini-gallery .mini {
@@ -1010,6 +1024,19 @@
         grid-template-columns: 1fr;
       }
 
+      .about-panel {
+        padding: 20px 18px;
+      }
+
+      .about-panel h2 {
+        font-size: clamp(2rem, 9vw, 3rem);
+        max-width: 100%;
+      }
+
+      .about-panel p {
+        max-width: 100%;
+      }
+
       .about-gallery {
         grid-template-columns: 1fr;
         grid-template-rows: 220px 180px 180px 180px 180px 180px;
@@ -1024,6 +1051,11 @@
 
       .media-feature-large {
         min-height: 240px;
+      }
+
+      .contact-actions {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
