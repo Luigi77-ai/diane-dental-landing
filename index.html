@@ -49,10 +49,6 @@
       text-rendering: optimizeLegibility;
     }
 
-    body.is-locked {
-      overflow: hidden;
-    }
-
     a {
       color: inherit;
       text-decoration: none;
@@ -62,72 +58,6 @@
       display: block;
       max-width: 100%;
       height: auto;
-    }
-
-    .intro-screen {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 22%),
-        radial-gradient(circle at 80% 78%, rgba(255,255,255,0.05), transparent 24%),
-        linear-gradient(180deg, #080808 0%, #000000 100%);
-      color: #ffffff;
-      transition: opacity 600ms ease, visibility 600ms ease;
-    }
-
-    .intro-screen.is-hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .intro-brand {
-      width: min(100% - 40px, 760px);
-      padding: 42px 28px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.03);
-      backdrop-filter: blur(10px);
-      text-align: center;
-      box-shadow: 0 30px 70px rgba(0,0,0,0.38);
-    }
-
-    .intro-kicker {
-      display: inline-block;
-      margin-bottom: 18px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .intro-logo-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 6px 0 16px;
-    }
-
-    .intro-logo {
-      width: min(100%, 340px);
-      max-height: 180px;
-      object-fit: contain;
-      mix-blend-mode: screen;
-      filter: brightness(1.85) contrast(1.18) grayscale(1);
-      opacity: 0.98;
-    }
-
-    .intro-screen p {
-      margin: 0 auto;
-      max-width: 34rem;
-      font-size: 0.98rem;
-      line-height: 1.8;
-      font-weight: 600;
-      color: rgba(255,255,255,0.86);
     }
 
     .container {
@@ -154,27 +84,44 @@
       min-height: 92px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      gap: 24px;
       padding: 0 10px;
     }
 
-    .main-nav {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+    .brand-mark {
+      display: inline-flex;
       align-items: center;
-      gap: 2px;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      min-width: 170px;
+    }
+
+    .brand-mark img {
+      width: auto;
+      height: 56px;
+      object-fit: contain;
+    }
+
+    .main-nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     .main-nav a {
       position: relative;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 64px;
-      font-size: clamp(1.35rem, 2vw, 2rem);
+      min-height: 56px;
+      padding: 0 14px;
+      font-size: clamp(1rem, 1.4vw, 1.3rem);
       font-weight: 800;
-      letter-spacing: -0.07em;
+      letter-spacing: -0.05em;
       color: var(--brand-navy);
       text-transform: uppercase;
       transition: transform var(--transition), opacity var(--transition), color var(--transition);
@@ -187,7 +134,7 @@
       position: absolute;
       left: 14%;
       right: 14%;
-      bottom: 6px;
+      bottom: 8px;
       height: 2px;
       background: var(--brand-red);
       transform: scaleX(0);
@@ -196,7 +143,7 @@
     }
 
     .main-nav a:hover {
-      transform: scale(1.06);
+      transform: scale(1.04);
       color: var(--brand-red);
     }
 
@@ -228,12 +175,18 @@
     }
 
     .display-title {
-      font-size: clamp(1.95rem, 3.9vw, 4rem);
-      line-height: 0.94;
-      letter-spacing: -0.09em;
+      font-size: clamp(2.7rem, 6vw, 5.8rem);
+      line-height: 0.88;
+      letter-spacing: -0.06em;
       text-transform: uppercase;
       font-weight: 800;
       color: var(--brand-navy);
+      overflow: visible;
+    }
+
+    .display-title .line {
+      display: block;
+      white-space: nowrap;
     }
 
     .mini-copy {
@@ -307,7 +260,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
+      grid-template-columns: 1.02fr 0.98fr;
       gap: 32px;
       align-items: center;
     }
@@ -316,19 +269,24 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 10px;
+      gap: 14px;
+      min-width: 0;
     }
 
     .hero-copy .display-title {
-      max-width: 10.8ch;
+      max-width: none;
     }
 
-    .hero-copy .display-title .accent {
+    .hero-copy .display-title .line:first-child {
+      color: var(--brand-navy);
+    }
+
+    .hero-copy .display-title .line:last-child {
       background: linear-gradient(
         90deg,
         var(--brand-red) 0%,
-        var(--brand-orange) 34%,
-        var(--brand-yellow) 66%,
+        var(--brand-orange) 38%,
+        var(--brand-yellow) 70%,
         var(--brand-navy) 100%
       );
       -webkit-background-clip: text;
@@ -982,16 +940,29 @@
     @media (max-width: 980px) {
       .topbar-inner {
         min-height: auto;
-        padding: 10px 12px;
+        padding: 14px 12px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .brand-mark {
+        min-width: 0;
+      }
+
+      .brand-mark img {
+        height: 50px;
       }
 
       .main-nav {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        width: 100%;
+        justify-content: flex-start;
+        gap: 2px 14px;
       }
 
       .main-nav a {
-        min-height: 48px;
-        font-size: 1rem;
+        min-height: 44px;
+        padding: 0 4px;
+        font-size: 0.98rem;
       }
 
       .hero-media {
@@ -1024,6 +995,10 @@
       .about-video-stack {
         grid-template-rows: 210px 210px;
       }
+
+      .display-title {
+        font-size: clamp(2.6rem, 9vw, 4.6rem);
+      }
     }
 
     @media (max-width: 640px) {
@@ -1032,13 +1007,13 @@
       }
 
       .main-nav {
+        display: grid;
         grid-template-columns: 1fr 1fr;
       }
 
       .main-nav a {
         justify-content: flex-start;
-        padding-left: 8px;
-        font-size: 1.08rem;
+        font-size: 1rem;
       }
 
       .work-strip,
@@ -1080,43 +1055,30 @@
         align-items: flex-start;
       }
 
-      .intro-brand {
-        padding: 34px 20px;
+      .brand-mark img {
+        height: 46px;
       }
 
-      .intro-screen p {
-        font-size: 0.9rem;
+      .display-title {
+        font-size: clamp(2.2rem, 11vw, 3.4rem);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
       }
 
-      .intro-logo {
-        width: min(100%, 260px);
-        max-height: 140px;
+      .hero-copy .display-title .line {
+        white-space: normal;
       }
     }
   </style>
 </head>
-<body class="is-locked">
-  <div class="intro-screen" id="introScreen" aria-hidden="true">
-    <div class="intro-brand">
-      <span class="intro-kicker">Creative Direction • Strategy • Digital Presence</span>
-
-      <div class="intro-logo-wrap">
-        <img
-          class="intro-logo"
-          src="./assets/images/Boss New Logo.jpeg"
-          alt="Boss Agency logo"
-        />
-      </div>
-
-      <p>
-        Clear positioning, strong visuals, and work presented with a more refined, professional tone from the first second.
-      </p>
-    </div>
-  </div>
-
+<body>
   <div class="topbar-wrap" id="topbarWrap">
     <header class="topbar">
       <div class="container topbar-inner">
+        <a href="#home" class="brand-mark" aria-label="The Boss Agency home">
+          <img src="./assets/images/Boss New Logo.jpeg" alt="Boss Agency logo" />
+        </a>
+
         <nav class="main-nav" aria-label="Main navigation">
           <a href="#home">Home</a>
           <a href="#about">About</a>
@@ -1134,15 +1096,16 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <div class="eyebrow">Selected Work</div>
+
             <h1 class="display-title">
-              We
-              <span class="accent">Know</span>
-              What
-              We Do
+              <span class="line">WE KNOW</span>
+              <span class="line">WHAT WE DO</span>
             </h1>
+
             <p class="mini-copy">
               We build digital presence with strategy, visual clarity, and execution that helps brands look stronger and convert better.
             </p>
+
             <div class="hero-actions">
               <a class="cta-button" href="#work">View Projects</a>
               <a class="cta-button secondary" href="#contact">Start a Project</a>
@@ -1183,9 +1146,11 @@
               <div class="eyebrow">Portfolio Direction</div>
               <h2>Visual Work. Clear Taste. Real Execution.</h2>
             </div>
+
             <p>
               We present our work with intention, strong visual judgment, and a structure designed to make every project feel clear, elevated, and professional.
             </p>
+
             <div class="hero-actions">
               <a class="cta-button" href="#work">See the Work</a>
               <a class="cta-button secondary" href="#process">How We Work</a>
@@ -1198,6 +1163,7 @@
                 <source src="./assets/videos/Grabación 2026-06-05 185803.mp4" type="video/mp4" />
               </video>
             </div>
+
             <div class="about-video-card">
               <video autoplay muted loop playsinline>
                 <source src="./assets/videos/Grabación 2026-06-05 185845.mp4" type="video/mp4" />
@@ -1532,6 +1498,7 @@
             <a class="cta-button" href="https://api.leadconnectorhq.com/widget/appointment/digitaldiscoverycall/discoverycall" target="_blank" rel="noopener noreferrer">
               Book a Strategy Call
             </a>
+
             <a class="cta-button secondary" href="#work">
               Back to Work
             </a>
@@ -1544,7 +1511,7 @@
                 <img src="./assets/images/Captura de pantalla 2026-06-05 183618.png" alt="Gallery preview two" />
               </div>
               <div class="mini">
-                <img src="./assets/images/Captura de pantalla 2026-06-05 184102.png" alt="Gallery preview three" />
+                <img src="./assets/images/Captura de pantalla 2026-06-05 185114.png" alt="Gallery preview three" />
               </div>
             </div>
           </div>
@@ -1555,16 +1522,8 @@
 
   <script>
     (function () {
-      const introScreen = document.getElementById("introScreen");
       const topbar = document.getElementById("topbarWrap");
       let lastScroll = window.scrollY;
-
-      window.addEventListener("load", function () {
-        setTimeout(function () {
-          introScreen.classList.add("is-hidden");
-          document.body.classList.remove("is-locked");
-        }, 1400);
-      });
 
       window.addEventListener("scroll", function () {
         const currentScroll = window.scrollY;
