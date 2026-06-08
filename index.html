@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Boss Agency Co. — Our Work</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>The Boss Agency Co. — Dental Growth Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,9 +19,11 @@
     :root {
       --bg: #f8f6f1;
       --surface: #ffffff;
-      --surface-soft: #eae2b7;
+      --surface-soft: #f7f1df;
+      --surface-soft-2: #f3ecda;
       --text: #111111;
-      --muted: #3f4b57;
+      --muted: #415060;
+      --muted-2: #657384;
       --line: rgba(0, 48, 73, 0.14);
       --brand-navy: #003049;
       --brand-red: #d62828;
@@ -26,6 +31,9 @@
       --brand-yellow: #fcbf49;
       --brand-cream: #eae2b7;
       --container: 1340px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
       --shadow-soft: 0 20px 40px rgba(0, 48, 73, 0.08);
       --shadow-md: 0 24px 60px rgba(0, 48, 73, 0.12);
       --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -35,13 +43,17 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      min-width: 0;
     }
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
+      min-width: 320px;
+      overflow-x: hidden;
       background: var(--bg);
       color: var(--text);
       font-family: "Plus Jakarta Sans", sans-serif;
@@ -54,10 +66,19 @@
       text-decoration: none;
     }
 
-    img, video {
+    img,
+    video {
       display: block;
       max-width: 100%;
       height: auto;
+    }
+
+    button,
+    a,
+    input,
+    textarea,
+    select {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
@@ -119,9 +140,9 @@
       justify-content: center;
       min-height: 56px;
       padding: 0 14px;
-      font-size: clamp(1rem, 1.4vw, 1.3rem);
+      font-size: clamp(1rem, 1.4vw, 1.16rem);
       font-weight: 800;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.015em;
       color: var(--brand-navy);
       text-transform: uppercase;
       transition: transform var(--transition), opacity var(--transition), color var(--transition);
@@ -143,7 +164,7 @@
     }
 
     .main-nav a:hover {
-      transform: scale(1.04);
+      transform: scale(1.03);
       color: var(--brand-red);
     }
 
@@ -162,7 +183,7 @@
       gap: 10px;
       font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--brand-navy);
     }
@@ -171,13 +192,29 @@
       content: "";
       width: 36px;
       height: 2px;
-      background: linear-gradient(90deg, var(--brand-red) 0%, var(--brand-orange) 45%, var(--brand-yellow) 100%);
+      background: linear-gradient(
+        90deg,
+        var(--brand-red) 0%,
+        var(--brand-orange) 45%,
+        var(--brand-yellow) 100%
+      );
+    }
+
+    .display-title,
+    .about-panel h2,
+    .portfolio-title,
+    .capabilities-copy h2,
+    .proof-copy h2,
+    .contact-card h2 {
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+      word-break: normal;
     }
 
     .display-title {
-      font-size: clamp(2.7rem, 6vw, 5.8rem);
-      line-height: 0.88;
-      letter-spacing: -0.06em;
+      font-size: clamp(2.75rem, 6vw, 5.4rem);
+      line-height: 0.97;
+      letter-spacing: -0.03em;
       text-transform: uppercase;
       font-weight: 800;
       color: var(--brand-navy);
@@ -194,7 +231,7 @@
       line-height: 1.8;
       color: var(--muted);
       font-weight: 700;
-      max-width: 34rem;
+      max-width: 38rem;
     }
 
     .cta-button,
@@ -203,15 +240,22 @@
       align-items: center;
       justify-content: center;
       min-height: 56px;
+      max-width: 100%;
       padding: 0 24px;
       background: #ffffff;
       color: #111111;
       border: 1.5px solid #111111;
+      border-radius: 999px;
       font-size: 0.92rem;
       font-weight: 800;
-      letter-spacing: -0.03em;
+      letter-spacing: 0;
       text-transform: uppercase;
-      transition: background var(--transition), color var(--transition), transform var(--transition), border-color var(--transition);
+      text-align: center;
+      transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        border-color var(--transition);
     }
 
     .cta-button:hover,
@@ -231,6 +275,7 @@
       color: rgba(255,255,255,0.96);
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
       backdrop-filter: blur(8px);
       flex-shrink: 0;
       transition: transform var(--transition), border-color var(--transition), background var(--transition), color var(--transition);
@@ -250,7 +295,7 @@
     }
 
     .home-section {
-      padding-top: 30px;
+      padding-top: 34px;
       padding-bottom: 58px;
       background:
         radial-gradient(circle at 84% 16%, rgba(214, 40, 40, 0.09), transparent 18%),
@@ -270,11 +315,6 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 14px;
-      min-width: 0;
-    }
-
-    .hero-copy .display-title {
-      max-width: none;
     }
 
     .hero-copy .display-title .line:first-child {
@@ -302,16 +342,17 @@
     }
 
     .hero-media {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: relative;
+      min-height: 520px;
     }
 
-    .hero-video {
-      max-height: 520px;
-      width: auto;
-      display: block;
-      border-radius: 26px;
+    .hero-blank {
+      position: absolute;
+      inset: 28px 40px 28px 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0,48,73,0.12);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,246,241,0.98) 100%);
       box-shadow: var(--shadow-md);
     }
 
@@ -327,6 +368,7 @@
       padding: 16px 18px;
       background: #ffffff;
       border: 1px solid rgba(0,48,73,0.16);
+      border-radius: var(--radius-md);
       box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
@@ -348,9 +390,9 @@
 
     .work-badge strong {
       font-size: 0.96rem;
-      line-height: 1.1;
+      line-height: 1.22;
       text-transform: uppercase;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.01em;
       font-weight: 800;
     }
 
@@ -360,6 +402,7 @@
       color: #111111;
       font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.01em;
     }
 
     .about-section {
@@ -377,11 +420,11 @@
     }
 
     .about-panel {
-      min-height: 0;
-      padding: 24px 26px;
-      background: rgba(255,255,255,0.80);
+      padding: 26px 28px;
+      background: rgba(255,255,255,0.82);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(0,48,73,0.1);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
@@ -391,19 +434,19 @@
     }
 
     .about-panel h2 {
-      font-size: clamp(2.4rem, 4.8vw, 4.5rem);
-      line-height: 0.9;
-      letter-spacing: -0.09em;
-      text-transform: uppercase;
+      font-size: clamp(2.4rem, 4.8vw, 4.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+      text-transform: none;
       font-weight: 800;
-      max-width: 6.5ch;
+      max-width: 12ch;
       color: var(--brand-navy);
     }
 
     .about-panel p {
-      max-width: 24rem;
-      font-size: 0.9rem;
-      line-height: 1.6;
+      max-width: 33rem;
+      font-size: 0.98rem;
+      line-height: 1.75;
       color: var(--muted);
       font-weight: 700;
     }
@@ -414,9 +457,9 @@
     }
 
     .about-panel .cta-button {
-      min-height: 46px;
+      min-height: 48px;
       padding: 0 18px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
     }
 
     .about-video-stack {
@@ -430,9 +473,9 @@
     .about-video-card {
       overflow: hidden;
       border: 1px solid rgba(0,48,73,0.08);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-soft);
       background: #0b1220;
-      min-height: 0;
     }
 
     .about-video-card video {
@@ -449,11 +492,16 @@
 
     .portfolio-marquee-bar {
       width: 100%;
-      background: linear-gradient(90deg, var(--brand-navy) 0%, var(--brand-red) 32%, var(--brand-orange) 66%, var(--brand-yellow) 100%);
+      background: linear-gradient(
+        90deg,
+        var(--brand-navy) 0%,
+        var(--brand-red) 32%,
+        var(--brand-orange) 66%,
+        var(--brand-yellow) 100%
+      );
       color: #ffffff;
       border-top: 1px solid rgba(17,17,17,0.08);
       border-bottom: 1px solid rgba(17,17,17,0.08);
-      margin-bottom: 0;
       margin-top: -1px;
     }
 
@@ -473,10 +521,10 @@
       min-height: 52px;
       text-align: center;
       font-size: 0.8rem;
-      line-height: 1.2;
+      line-height: 1.28;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
     }
 
     .portfolio-inner {
@@ -499,12 +547,12 @@
     }
 
     .portfolio-title {
-      font-size: clamp(3.2rem, 7vw, 7rem);
-      line-height: 0.84;
-      letter-spacing: -0.11em;
-      text-transform: uppercase;
+      font-size: clamp(2.6rem, 5.5vw, 4.7rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-transform: none;
       font-weight: 800;
-      max-width: 8ch;
+      max-width: 12ch;
       color: var(--brand-navy);
     }
 
@@ -518,6 +566,7 @@
     .portfolio-side-gallery .gallery-card {
       overflow: hidden;
       border: 1px solid rgba(0,48,73,0.08);
+      border-radius: var(--radius-md);
       box-shadow: var(--shadow-soft);
       background: #f3f3f3;
       min-height: 160px;
@@ -545,6 +594,7 @@
       min-height: 340px;
       overflow: hidden;
       border: 1px solid rgba(0,48,73,0.09);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-soft);
       background: #f2f2f2;
       transition: transform var(--transition), box-shadow var(--transition);
@@ -591,7 +641,13 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg, rgba(0,48,73,0.88) 0%, rgba(214,40,40,0.34) 42%, rgba(247,127,0,0.28) 70%, rgba(252,191,73,0.18) 100%);
+        linear-gradient(
+          135deg,
+          rgba(0,48,73,0.88) 0%,
+          rgba(214,40,40,0.34) 42%,
+          rgba(247,127,0,0.28) 70%,
+          rgba(252,191,73,0.18) 100%
+        );
       backdrop-filter: blur(2px);
     }
 
@@ -618,17 +674,18 @@
     }
 
     .capabilities-copy h2 {
-      font-size: clamp(3rem, 6vw, 6rem);
-      line-height: 0.86;
-      letter-spacing: -0.1em;
-      text-transform: uppercase;
+      font-size: clamp(2.5rem, 5.4vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-transform: none;
       font-weight: 800;
-      max-width: 8ch;
+      max-width: 11ch;
       color: #ffffff;
     }
 
     .capabilities-copy .mini-copy {
       color: rgba(255,255,255,0.9);
+      max-width: 36rem;
     }
 
     .capabilities-video-column {
@@ -641,16 +698,14 @@
       min-height: 250px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-soft);
       background: rgba(255,255,255,0.08);
       position: relative;
       backdrop-filter: blur(6px);
     }
 
-    .capabilities-video-card.video-top {
-      min-height: 280px;
-    }
-
+    .capabilities-video-card.video-top,
     .capabilities-video-card.video-bottom {
       min-height: 280px;
     }
@@ -670,8 +725,9 @@
       color: #ffffff;
       font-size: 0.74rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      border-radius: 999px;
       z-index: 2;
     }
 
@@ -723,7 +779,7 @@
       font-size: 0.96rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.01em;
     }
 
     .proof-section {
@@ -738,12 +794,12 @@
     }
 
     .proof-copy h2 {
-      font-size: clamp(2.8rem, 6vw, 5.6rem);
-      line-height: 0.88;
-      letter-spacing: -0.09em;
-      text-transform: uppercase;
+      font-size: clamp(2.45rem, 5.2vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-transform: none;
       font-weight: 800;
-      max-width: 9ch;
+      max-width: 12ch;
       color: var(--brand-navy);
     }
 
@@ -752,8 +808,8 @@
       font-size: 1rem;
       line-height: 1.82;
       color: #111111;
-      font-weight: 800;
-      max-width: 34rem;
+      font-weight: 700;
+      max-width: 36rem;
     }
 
     .proof-banners {
@@ -768,6 +824,7 @@
       padding: 22px 18px 28px;
       background: #ffffff;
       border: 1px solid rgba(0,48,73,0.12);
+      border-radius: 22px;
       box-shadow: var(--shadow-soft);
       clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
       display: flex;
@@ -794,9 +851,9 @@
 
     .proof-banner h3 {
       font-size: 1rem;
-      line-height: 1.15;
-      text-transform: uppercase;
-      letter-spacing: -0.04em;
+      line-height: 1.24;
+      text-transform: none;
+      letter-spacing: -0.01em;
       font-weight: 800;
       text-align: center;
     }
@@ -822,6 +879,7 @@
 
     .contact-section {
       background: linear-gradient(180deg, #f8f6f1 0%, #ffffff 100%);
+      border-bottom: 0;
     }
 
     .contact-card {
@@ -830,6 +888,7 @@
       gap: 28px;
       padding: 34px;
       border: 1px solid rgba(0,48,73,0.08);
+      border-radius: 28px;
       box-shadow: var(--shadow-md);
       background:
         radial-gradient(circle at 12% 22%, rgba(214,40,40,0.08), transparent 20%),
@@ -839,12 +898,12 @@
     }
 
     .contact-card h2 {
-      font-size: clamp(2.6rem, 5vw, 5rem);
-      line-height: 0.9;
-      letter-spacing: -0.08em;
-      text-transform: uppercase;
+      font-size: clamp(2.45rem, 5vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-transform: none;
       font-weight: 800;
-      max-width: 10ch;
+      max-width: 12ch;
       color: var(--brand-navy);
     }
 
@@ -854,7 +913,7 @@
       line-height: 1.8;
       color: var(--muted);
       font-weight: 700;
-      max-width: 34rem;
+      max-width: 36rem;
     }
 
     .contact-actions {
@@ -879,6 +938,7 @@
       min-height: 150px;
       overflow: hidden;
       border: 1px solid rgba(0,48,73,0.08);
+      border-radius: var(--radius-md);
       box-shadow: var(--shadow-soft);
       background: #f2f2f2;
     }
@@ -887,6 +947,39 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: #ffffff;
+      padding: 14px 0 18px;
+    }
+
+    .site-footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: var(--muted-2);
+    }
+
+    .site-footer-legal {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .site-footer-legal a {
+      color: var(--brand-navy);
+      font-weight: 700;
+    }
+
+    .site-footer-legal a:hover {
+      color: var(--brand-red);
     }
 
     @keyframes marqueeLeft {
@@ -937,6 +1030,10 @@
     }
 
     @media (max-width: 980px) {
+      .section {
+        padding: 56px 0;
+      }
+
       .topbar-inner {
         min-height: auto;
         padding: 14px 12px;
@@ -975,6 +1072,10 @@
         min-height: 320px;
       }
 
+      .portfolio-grid {
+        gap: 14px;
+      }
+
       .project-card.large,
       .project-card.tall,
       .project-card.medium,
@@ -996,13 +1097,29 @@
       }
 
       .display-title {
-        font-size: clamp(2.6rem, 9vw, 4.6rem);
+        font-size: clamp(2.5rem, 8.5vw, 4.2rem);
+      }
+
+      .hero-actions,
+      .contact-actions {
+        width: 100%;
+      }
+
+      .hero-actions .cta-button,
+      .hero-actions .cta-button.secondary,
+      .contact-actions .cta-button,
+      .contact-actions .cta-button.secondary {
+        width: 100%;
       }
     }
 
     @media (max-width: 640px) {
       .container {
         width: min(100% - 24px, var(--container));
+      }
+
+      .section {
+        padding: 46px 0;
       }
 
       .main-nav {
@@ -1023,17 +1140,27 @@
         grid-template-columns: 1fr;
       }
 
+      .portfolio-marquee-static span {
+        min-height: auto;
+        padding: 12px 0;
+      }
+
       .about-panel {
         padding: 20px 18px;
       }
 
       .about-panel h2 {
-        font-size: clamp(2rem, 9vw, 3rem);
+        font-size: clamp(1.9rem, 8vw, 2.8rem);
         max-width: 100%;
       }
 
-      .about-panel p {
+      .about-panel p,
+      .proof-copy p,
+      .contact-card p,
+      .mini-copy {
         max-width: 100%;
+        font-size: 0.95rem;
+        line-height: 1.68;
       }
 
       .about-video-stack {
@@ -1059,13 +1186,71 @@
       }
 
       .display-title {
-        font-size: clamp(2.2rem, 11vw, 3.4rem);
-        line-height: 0.9;
-        letter-spacing: -0.04em;
+        font-size: clamp(2.15rem, 10vw, 3.2rem);
+        line-height: 0.98;
+        letter-spacing: -0.02em;
       }
 
       .hero-copy .display-title .line {
         white-space: normal;
+      }
+
+      .portfolio-title,
+      .capabilities-copy h2,
+      .proof-copy h2,
+      .contact-card h2 {
+        font-size: clamp(2rem, 8vw, 2.9rem);
+        line-height: 1.02;
+        letter-spacing: -0.015em;
+        max-width: 100%;
+      }
+
+      .project-card,
+      .project-card.large,
+      .project-card.tall,
+      .project-card.medium,
+      .project-card.wide {
+        min-height: 240px;
+      }
+
+      .hero-blank,
+      .about-video-card,
+      .capabilities-video-card {
+        border-radius: 18px;
+      }
+
+      .contact-card {
+        padding: 22px 18px;
+        border-radius: 22px;
+      }
+
+      .proof-banner {
+        min-height: auto;
+        clip-path: none;
+        border-radius: 18px;
+        padding: 20px 16px;
+        transform: none;
+      }
+
+      .site-footer {
+        padding: 14px 0 20px;
+      }
+
+      .site-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .site-footer-legal {
+        gap: 6px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -1081,8 +1266,8 @@
         <nav class="main-nav" aria-label="Main navigation">
           <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#work">Services</a>
-          <a href="#process">Case Studies</a>
+          <a href="#work">Work</a>
+          <a href="#process">Proof</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -1094,7 +1279,7 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-copy">
-            <div class="eyebrow">Built for Dental Practices</div>
+            <div class="eyebrow">Selected Work</div>
 
             <h1 class="display-title">
               <span class="line">WE KNOW</span>
@@ -1102,37 +1287,38 @@
             </h1>
 
             <p class="mini-copy">
-              We build digital presence with strategy, visual clarity, and execution that helps dental practices stand out locally, attract high-value cases, and convert more traffic into patients.
+              We build digital presence with strategy, visual clarity, and execution that helps dental brands look stronger and convert better.
             </p>
 
             <div class="hero-actions">
-              <a class="cta-button" href="#work">See Our Work</a>
-              <a class="cta-button secondary" href="#contact">Book a Call</a>
+              <a class="cta-button" href="#work">View Projects</a>
+              <a class="cta-button secondary" href="#contact">Start a Project</a>
             </div>
           </div>
 
           <div class="hero-media">
-            <video class="hero-video" autoplay muted loop playsinline>
-            <source src="./assets/videos/introvideo.mp4" type="video/mp4" />
-          </video>
+            <div class="hero-blank" aria-hidden="true"></div>
           </div>
         </div>
 
         <div class="work-strip">
           <div class="work-badge">
-            <strong>Patient Acquisition</strong>
-            <span>Attract More Patients</span>
+            <strong>Brand Positioning</strong>
+            <span>Strategy / Messaging</span>
           </div>
+
           <div class="work-badge">
             <strong>Creative Direction</strong>
             <span>Photo / Video / Design</span>
           </div>
+
           <div class="work-badge">
             <strong>Campaign Systems</strong>
             <span>Paid / Organic / Conversion</span>
           </div>
+
           <div class="work-badge">
-            <strong>Clinics That Convert</strong>
+            <strong>Execution That Looks Sharp</strong>
             <span>Built To Perform</span>
           </div>
         </div>
@@ -1144,17 +1330,17 @@
         <div class="about-grid">
           <div class="about-panel">
             <div>
-              <div class="eyebrow">Client Results</div>
+              <div class="eyebrow">Portfolio Direction</div>
               <h2>Real Results for Real Dental Practices.</h2>
             </div>
 
             <p>
-              Every campaign we build is designed specifically for dental offices — to attract local patients, fill appointment slots, and grow your practice revenue.
+              We present our work with intention, strong visual judgment, and a structure designed to make every project feel clear, elevated, and professional for modern dental brands.
             </p>
 
             <div class="hero-actions">
-              <a class="cta-button" href="#work">See Case Studies</a>
-              <a class="cta-button secondary" href="#process">How We Grow Practices</a>
+              <a class="cta-button" href="#work">See the Work</a>
+              <a class="cta-button secondary" href="#process">How We Work</a>
             </div>
           </div>
 
@@ -1188,7 +1374,7 @@
       <div class="container portfolio-inner">
         <div class="portfolio-head">
           <div class="portfolio-title-wrap">
-            <div class="eyebrow">Dental Client Results</div>
+            <div class="eyebrow">Featured Projects</div>
             <h2 class="portfolio-title">Dental Brands That Stand Out and Convert</h2>
           </div>
 
@@ -1196,9 +1382,11 @@
             <div class="gallery-card">
               <img src="./assets/images/Captura de pantalla 2026-06-05 183508.png" alt="Featured project preview one" />
             </div>
+
             <div class="gallery-card">
               <img src="./assets/images/Captura de pantalla 2026-06-05 183618.png" alt="Featured project preview two" />
             </div>
+
             <div class="gallery-card wide">
               <video autoplay muted loop playsinline>
                 <source src="./assets/videos/Grabación 2026-06-05 185922.mp4" type="video/mp4" />
@@ -1259,10 +1447,11 @@
       <div class="container capabilities-inner">
         <div class="capabilities-layout">
           <div class="capabilities-copy">
-            <div class="eyebrow">What We Do for Dentists</div>
+            <div class="eyebrow">Capabilities</div>
             <h2>More Patients. Better Presence. Stronger Practice.</h2>
+
             <p class="mini-copy">
-              We build complete patient acquisition systems for dental practices — from branding and web design to paid ads and video content, all designed to fill your schedule.
+              We create digital presence with strategy, visual execution, and systems designed to position every dental office more clearly across web, creative, and performance media.
             </p>
           </div>
 
@@ -1425,10 +1614,10 @@
       <div class="container">
         <div class="proof-grid">
           <div class="proof-copy">
-            <div class="eyebrow">Why Dentists Choose Us</div>
+            <div class="eyebrow">Why It Works</div>
             <h2>Built Specifically for Dental Practices</h2>
             <p>
-              We specialize exclusively in helping dental offices attract more high-value patients, grow their local presence, and convert website traffic into booked appointments.
+              Our goal is to show quality quickly, with a clear mix of strategy, visual direction, and execution that feels premium from the first scroll on both desktop and mobile.
             </p>
           </div>
 
@@ -1442,8 +1631,8 @@
                   <path d="M22 19V3"></path>
                 </svg>
               </span>
-              <h3>Patient Trust</h3>
-              <p>A premium online presence builds instant credibility, positioning your clinic as the top choice in your local area.</p>
+              <h3>Clear Taste</h3>
+              <p>Visual restraint, balanced typography, and strong presentation choices make the work feel more credible.</p>
             </article>
 
             <article class="proof-banner">
@@ -1454,7 +1643,7 @@
                 </svg>
               </span>
               <h3>Real Media</h3>
-              <p>Scroll-stopping photo, video, and creative assets that showcase your clinic and build trust before the first appointment.</p>
+              <p>Photos, reels, and visual assets do the heavy lifting instead of too much explanatory text.</p>
             </article>
 
             <article class="proof-banner">
@@ -1464,8 +1653,8 @@
                   <path d="m5 15 4-4 3 3 6-7"></path>
                 </svg>
               </span>
-              <h3>High-Converting Design</h3>
-              <p>We build clean, direct landing pages engineered to turn local traffic into booked appointments seamlessly.</p>
+              <h3>Fast Signal</h3>
+              <p>Visitors understand the quality of your dental brand much faster when the presentation feels clean and direct.</p>
             </article>
 
             <article class="proof-banner">
@@ -1476,8 +1665,8 @@
                   <path d="M20 7.5 12 11 4 7.5"></path>
                 </svg>
               </span>
-              <h3>Scalable Growth</h3>
-              <p>Our patient acquisition systems stay flexible, allowing you to scale up ad spend and add new services without breaking your funnel.</p>
+              <h3>Room To Grow</h3>
+              <p>The structure stays flexible so you can keep adding more campaigns and cases without damaging the layout.</p>
             </article>
           </div>
         </div>
@@ -1488,25 +1677,36 @@
       <div class="container">
         <div class="contact-card">
           <div>
-            <div class="eyebrow">Your Next Step</div>
+            <div class="eyebrow">Next Move</div>
             <h2>Ready to Grow Your Dental Practice?</h2>
             <p>
-              Ready to fill your open chairs with high-value patients? Let's map out your growth strategy.
+              Keep this last section simple. One strong call to action, a clean gallery, and enough confidence to close the page with authority across desktop and mobile.
             </p>
           </div>
 
           <div class="contact-actions">
-            <a class="cta-button" href="https://api.leadconnectorhq.com/widget/appointment/digitaldiscoverycall/discoverycall" target="_blank" rel="noopener noreferrer">
+            <a
+              class="cta-button"
+              href="https://api.leadconnectorhq.com/widget/booking/VUfZYj7AYUF48jbztrBw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Claim Your Strategy Call
+            </a>
+
+            <a class="cta-button secondary" href="#work">
+              Back to Work
             </a>
 
             <div class="contact-mini-gallery">
               <div class="mini">
                 <img src="./assets/images/Captura de pantalla 2026-06-05 183508.png" alt="Gallery preview one" />
               </div>
+
               <div class="mini">
                 <img src="./assets/images/Captura de pantalla 2026-06-05 183618.png" alt="Gallery preview two" />
               </div>
+
               <div class="mini">
                 <img src="./assets/images/Captura de pantalla 2026-06-05 185114.png" alt="Gallery preview three" />
               </div>
@@ -1517,22 +1717,38 @@
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="container site-footer-inner">
+      <div>© 2026 All rights reserved</div>
+
+      <div class="site-footer-legal">
+        <a href="./terms-conditions.html">Terms &amp; Conditions</a>
+        <span>|</span>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
     (function () {
       const topbar = document.getElementById("topbarWrap");
       let lastScroll = window.scrollY;
 
-      window.addEventListener("scroll", function () {
-        const currentScroll = window.scrollY;
+      window.addEventListener(
+        "scroll",
+        function () {
+          const currentScroll = window.scrollY;
 
-        if (currentScroll > lastScroll && currentScroll > 80) {
-          topbar.classList.add("is-hidden");
-        } else {
-          topbar.classList.remove("is-hidden");
-        }
+          if (currentScroll > lastScroll && currentScroll > 80) {
+            topbar.classList.add("is-hidden");
+          } else {
+            topbar.classList.remove("is-hidden");
+          }
 
-        lastScroll = currentScroll;
-      });
+          lastScroll = currentScroll;
+        },
+        { passive: true }
+      );
     })();
   </script>
 </body>
