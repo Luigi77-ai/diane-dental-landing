@@ -343,17 +343,23 @@
 
     .hero-media {
       position: relative;
-      min-height: 520px;
+      min-height: 610px;
     }
 
-    .hero-blank {
+    .hero-video {
       position: absolute;
-      inset: 28px 40px 28px 40px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(0,48,73,0.12);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,246,241,0.98) 100%);
+      inset: 40px 130px 40px 70px;
+      overflow: hidden;
+      border-radius: 26px;
       box-shadow: var(--shadow-md);
+      border: 1px solid rgba(0,48,73,0.12);
+      background: #f1f3f7;
+    }
+
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .work-strip {
@@ -918,20 +924,25 @@
 
     .contact-actions {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .contact-buttons {
+      display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: center;
       gap: 14px;
+      width: 100%;
     }
 
     .contact-mini-gallery {
-      margin-top: 8px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
       width: 100%;
-      flex-basis: 100%;
     }
 
     .contact-mini-gallery .mini {
@@ -1065,7 +1076,7 @@
         min-height: auto;
       }
 
-      .hero-blank {
+      .hero-video {
         position: relative;
         inset: auto;
         width: 100%;
@@ -1101,14 +1112,15 @@
       }
 
       .hero-actions,
-      .contact-actions {
+      .contact-actions,
+      .contact-buttons {
         width: 100%;
       }
 
       .hero-actions .cta-button,
       .hero-actions .cta-button.secondary,
-      .contact-actions .cta-button,
-      .contact-actions .cta-button.secondary {
+      .contact-buttons .cta-button,
+      .contact-buttons .cta-button.secondary {
         width: 100%;
       }
     }
@@ -1134,8 +1146,6 @@
 
       .work-strip,
       .proof-banners,
-      .contact-mini-gallery,
-      .portfolio-side-gallery,
       .portfolio-marquee-static {
         grid-template-columns: 1fr;
       }
@@ -1172,13 +1182,12 @@
         min-height: 210px;
       }
 
-      .portfolio-side-gallery .wide {
-        grid-column: auto;
+      .portfolio-side-gallery {
+        grid-template-columns: 1fr;
       }
 
-      .contact-actions {
-        flex-direction: column;
-        align-items: flex-start;
+      .portfolio-side-gallery .wide {
+        grid-column: auto;
       }
 
       .brand-mark img {
@@ -1213,7 +1222,7 @@
         min-height: 240px;
       }
 
-      .hero-blank,
+      .hero-video,
       .about-video-card,
       .capabilities-video-card {
         border-radius: 18px;
@@ -1222,6 +1231,19 @@
       .contact-card {
         padding: 22px 18px;
         border-radius: 22px;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+      }
+
+      .contact-mini-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .contact-mini-gallery .mini {
+        min-height: 88px;
       }
 
       .proof-banner {
@@ -1297,7 +1319,11 @@
           </div>
 
           <div class="hero-media">
-            <div class="hero-blank" aria-hidden="true"></div>
+            <div class="hero-video">
+              <video autoplay muted loop playsinline>
+                <source src="./assets/videos/introvideo.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
 
@@ -1685,18 +1711,20 @@
           </div>
 
           <div class="contact-actions">
-            <a
-              class="cta-button"
-              href="https://api.leadconnectorhq.com/widget/booking/VUfZYj7AYUF48jbztrBw"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Claim Your Strategy Call
-            </a>
+            <div class="contact-buttons">
+              <a
+                class="cta-button"
+                href="https://api.leadconnectorhq.com/widget/booking/VUfZYj7AYUF48jbztrBw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Claim Your Strategy Call
+              </a>
 
-            <a class="cta-button secondary" href="#work">
-              Back to Work
-            </a>
+              <a class="cta-button secondary" href="#work">
+                Back to Work
+              </a>
+            </div>
 
             <div class="contact-mini-gallery">
               <div class="mini">
@@ -1722,9 +1750,9 @@
       <div>© 2026 All rights reserved</div>
 
       <div class="site-footer-legal">
-        <a href="./terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="terms-conditions.html">Terms &amp; Conditions</a>
         <span>|</span>
-        <a href="./privacy-policy.html">Privacy Policy</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
   </footer>
