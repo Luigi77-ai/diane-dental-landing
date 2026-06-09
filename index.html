@@ -1,180 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Boss Agency Co | Digital Marketing, Branding & Growth</title>
   <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
+    name="description"
+    content="The Boss Agency Co helps businesses grow through branding, web development, social media strategy, Google My Business optimization, and data-driven marketing solutions."
   />
-  <title>The Boss Agency Co. — Dental Growth Portfolio</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
   <style>
     :root {
       --bg: #f8f6f1;
-      --surface: #ffffff;
-      --surface-soft: #f7f1df;
-      --surface-soft-2: #f3ecda;
+      --surface: #fffdf9;
+      --surface-2: #fff7ea;
       --text: #111111;
-      --muted: #415060;
-      --muted-2: #657384;
-      --line: rgba(0, 48, 73, 0.14);
-      --brand-navy: #003049;
-      --brand-red: #d62828;
-      --brand-orange: #f77f00;
-      --brand-yellow: #fcbf49;
-      --brand-cream: #eae2b7;
-      --container: 1340px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
+      --muted: #5d6672;
+      --line: rgba(0, 48, 73, 0.12);
+      --navy: #003049;
+      --red: #d62828;
+      --orange: #f77f00;
+      --yellow: #fcbf49;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(0, 48, 73, 0.08);
+      --radius: 24px;
       --radius-sm: 14px;
-      --shadow-soft: 0 20px 40px rgba(0, 48, 73, 0.08);
-      --shadow-md: 0 24px 60px rgba(0, 48, 73, 0.12);
-      --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+      --container: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      min-width: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      min-width: 320px;
-      overflow-x: hidden;
-      background: var(--bg);
-      color: var(--text);
+      margin: 0;
       font-family: "Plus Jakarta Sans", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 12%, rgba(214, 40, 40, 0.08), transparent 18%),
+        radial-gradient(circle at 15% 82%, rgba(247, 127, 0, 0.10), transparent 24%),
+        linear-gradient(180deg, #f8f6f1 0%, #fffdf9 100%);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img,
-    video {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    button,
-    a,
-    input,
-    textarea,
-    select {
-      -webkit-tap-highlight-color: transparent;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(100% - 40px, var(--container));
       margin-inline: auto;
     }
 
-    .topbar-wrap {
+    .topbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(248, 246, 241, 0.94);
-      backdrop-filter: blur(14px);
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(248, 246, 241, 0.9);
       border-bottom: 1px solid var(--line);
-      transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), opacity 260ms ease;
-    }
-
-    .topbar-wrap.is-hidden {
-      transform: translateY(-100%);
-      opacity: 0;
     }
 
     .topbar-inner {
-      min-height: 92px;
+      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      padding: 0 10px;
+      gap: 20px;
     }
 
-    .brand-mark {
-      display: inline-flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-shrink: 0;
-      min-width: 170px;
+    .brand {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--navy);
     }
 
-    .brand-mark img {
-      width: auto;
-      height: 56px;
-      object-fit: contain;
-    }
-
-    .main-nav {
-      flex: 1;
+    .nav {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
-    .main-nav a {
-      position: relative;
+    .nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .nav a:hover { color: var(--red); }
+
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 56px;
-      padding: 0 14px;
-      font-size: clamp(1rem, 1.4vw, 1.16rem);
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
       font-weight: 800;
-      letter-spacing: -0.015em;
-      color: var(--brand-navy);
-      text-transform: uppercase;
-      transition: transform var(--transition), opacity var(--transition), color var(--transition);
-      transform-origin: center;
-      white-space: nowrap;
+      font-size: 0.95rem;
+      transition: 180ms ease;
+      border: 1px solid transparent;
     }
 
-    .main-nav a::after {
-      content: "";
-      position: absolute;
-      left: 14%;
-      right: 14%;
-      bottom: 8px;
-      height: 2px;
-      background: var(--brand-red);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform var(--transition);
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow);
     }
 
-    .main-nav a:hover {
-      transform: scale(1.03);
-      color: var(--brand-red);
+    .btn-primary:hover {
+      background: var(--red);
+      transform: translateY(-1px);
     }
 
-    .main-nav a:hover::after {
-      transform: scaleX(1);
+    .btn-secondary {
+      background: transparent;
+      color: var(--navy);
+      border-color: rgba(0, 48, 73, 0.14);
     }
 
-    .section {
-      padding: 74px 0;
-      border-bottom: 1px solid var(--line);
+    .btn-secondary:hover {
+      border-color: rgba(214, 40, 40, 0.3);
+      color: var(--red);
+    }
+
+    .hero {
+      padding: 72px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(0,48,73,0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 38px;
     }
 
     .eyebrow {
@@ -185,1599 +162,733 @@
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--brand-navy);
+      color: var(--navy);
     }
 
     .eyebrow::before {
       content: "";
-      width: 36px;
+      width: 38px;
       height: 2px;
-      background: linear-gradient(
-        90deg,
-        var(--brand-red) 0%,
-        var(--brand-orange) 45%,
-        var(--brand-yellow) 100%
-      );
+      background: linear-gradient(90deg, var(--red) 0%, var(--orange) 45%, var(--yellow) 100%);
     }
 
-    .display-title,
-    .about-panel h2,
-    .portfolio-title,
-    .capabilities-copy h2,
-    .proof-copy h2,
-    .contact-card h2 {
-      text-wrap: balance;
-      overflow-wrap: anywhere;
-      word-break: normal;
-    }
-
-    .display-title {
-      font-size: clamp(2.75rem, 6vw, 5.4rem);
-      line-height: 0.97;
+    h1 {
+      margin: 18px 0 16px;
+      font-size: clamp(2.5rem, 5vw, 5.2rem);
+      line-height: 0.98;
       letter-spacing: -0.03em;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: var(--brand-navy);
-      overflow: visible;
+      color: var(--navy);
+      max-width: 11ch;
     }
 
-    .display-title .line {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .mini-copy {
+    .hero-copy p {
+      max-width: 60ch;
+      color: var(--muted);
       font-size: 1rem;
       line-height: 1.8;
-      color: var(--muted);
-      font-weight: 700;
-      max-width: 38rem;
-    }
-
-    .cta-button,
-    .cta-button.secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 56px;
-      max-width: 100%;
-      padding: 0 24px;
-      background: #ffffff;
-      color: #111111;
-      border: 1.5px solid #111111;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 800;
-      letter-spacing: 0;
-      text-transform: uppercase;
-      text-align: center;
-      transition:
-        background var(--transition),
-        color var(--transition),
-        transform var(--transition),
-        border-color var(--transition);
-    }
-
-    .cta-button:hover,
-    .cta-button.secondary:hover {
-      background: #111111;
-      color: #ffffff;
-      border-color: #111111;
-      transform: translateY(-2px);
-    }
-
-    .icon-glass {
-      width: 44px;
-      height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.96);
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 999px;
-      backdrop-filter: blur(8px);
-      flex-shrink: 0;
-      transition: transform var(--transition), border-color var(--transition), background var(--transition), color var(--transition);
-    }
-
-    .icon-glass:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.28);
-    }
-
-    .proof-icon {
-      color: #111111;
-      background: #ffffff;
-      border: 1px solid rgba(17,17,17,0.14);
-      backdrop-filter: none;
-    }
-
-    .home-section {
-      padding-top: 34px;
-      padding-bottom: 58px;
-      background:
-        radial-gradient(circle at 84% 16%, rgba(214, 40, 40, 0.09), transparent 18%),
-        radial-gradient(circle at 12% 82%, rgba(247, 127, 0, 0.10), transparent 24%),
-        linear-gradient(180deg, #f8f6f1 0%, #fffdf9 100%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .hero-copy .display-title .line:first-child {
-      color: var(--brand-navy);
-    }
-
-    .hero-copy .display-title .line:last-child {
-      background: linear-gradient(
-        90deg,
-        var(--brand-red) 0%,
-        var(--brand-orange) 38%,
-        var(--brand-yellow) 70%,
-        var(--brand-navy) 100%
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-weight: 600;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
       gap: 12px;
-      margin-top: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
     }
 
-    .hero-media {
-      position: relative;
-      min-height: 610px;
-    }
-
-    .hero-video {
-      position: absolute;
-      inset: 40px 130px 40px 70px;
-      overflow: hidden;
-      border-radius: 26px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid rgba(0,48,73,0.12);
-      background: #f1f3f7;
-    }
-
-    .hero-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .work-strip {
-      margin-top: 28px;
+    .hero-card {
+      padding: 28px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .work-badge {
-      min-height: 92px;
-      padding: 16px 18px;
-      background: #ffffff;
-      border: 1px solid rgba(0,48,73,0.16);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 6px;
-      transition: transform var(--transition), background var(--transition), border-color var(--transition);
-    }
-
-    .work-badge:hover {
-      transform: translateY(-4px);
-      background: var(--brand-cream);
-      border-color: rgba(214,40,40,0.24);
-    }
-
-    .work-badge:nth-child(1) strong { color: var(--brand-navy); }
-    .work-badge:nth-child(2) strong { color: var(--brand-red); }
-    .work-badge:nth-child(3) strong { color: var(--brand-orange); }
-    .work-badge:nth-child(4) strong { color: #856300; }
-
-    .work-badge strong {
-      font-size: 0.96rem;
-      line-height: 1.22;
-      text-transform: uppercase;
-      letter-spacing: -0.01em;
-      font-weight: 800;
-    }
-
-    .work-badge span {
-      font-size: 0.82rem;
-      line-height: 1.5;
-      color: #111111;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.01em;
-    }
-
-    .about-section {
+      gap: 18px;
+      align-content: start;
       background:
-        radial-gradient(circle at 18% 22%, rgba(0, 48, 73, 0.12), transparent 28%),
-        radial-gradient(circle at 82% 18%, rgba(252, 191, 73, 0.20), transparent 22%),
-        linear-gradient(135deg, #f6f1de 0%, #f8f6f1 50%, #ffffff 100%);
+        linear-gradient(180deg, rgba(255,245,212,0.9), rgba(255,255,255,0.9));
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-      align-items: start;
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(0,48,73,0.08);
     }
 
-    .about-panel {
-      padding: 26px 28px;
-      background: rgba(255,255,255,0.82);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(0,48,73,0.1);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 16px;
-      align-self: start;
-    }
-
-    .about-panel h2 {
-      font-size: clamp(2.4rem, 4.8vw, 4.2rem);
-      line-height: 0.98;
-      letter-spacing: -0.025em;
-      text-transform: none;
-      font-weight: 800;
-      max-width: 12ch;
-      color: var(--brand-navy);
-    }
-
-    .about-panel p {
-      max-width: 33rem;
-      font-size: 0.98rem;
-      line-height: 1.75;
+    .stat-label {
       color: var(--muted);
-      font-weight: 700;
-    }
-
-    .about-panel .hero-actions {
-      margin-top: 2px;
-      gap: 10px;
-    }
-
-    .about-panel .cta-button {
-      min-height: 48px;
-      padding: 0 18px;
-      font-size: 0.8rem;
-    }
-
-    .about-video-stack {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 250px 250px;
-      gap: 14px;
-      align-self: start;
-    }
-
-    .about-video-card {
-      overflow: hidden;
-      border: 1px solid rgba(0,48,73,0.08);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      background: #0b1220;
-    }
-
-    .about-video-card video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .portfolio-section {
-      background: #ffffff;
-      overflow: hidden;
-      padding-top: 0;
-    }
-
-    .portfolio-marquee-bar {
-      width: 100%;
-      background: linear-gradient(
-        90deg,
-        var(--brand-navy) 0%,
-        var(--brand-red) 32%,
-        var(--brand-orange) 66%,
-        var(--brand-yellow) 100%
-      );
-      color: #ffffff;
-      border-top: 1px solid rgba(17,17,17,0.08);
-      border-bottom: 1px solid rgba(17,17,17,0.08);
-      margin-top: -1px;
-    }
-
-    .portfolio-marquee-static {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      align-items: center;
-      min-height: 52px;
-      padding: 0 24px;
-    }
-
-    .portfolio-marquee-static span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      text-align: center;
-      font-size: 0.8rem;
-      line-height: 1.28;
-      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .portfolio-inner {
-      padding-top: 30px;
-    }
-
-    .portfolio-head {
-      display: grid;
-      grid-template-columns: 0.86fr 1.14fr;
-      gap: 22px;
-      align-items: stretch;
-      margin-bottom: 30px;
-    }
-
-    .portfolio-title-wrap {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 16px;
-    }
-
-    .portfolio-title {
-      font-size: clamp(2.6rem, 5.5vw, 4.7rem);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-transform: none;
-      font-weight: 800;
-      max-width: 12ch;
-      color: var(--brand-navy);
-    }
-
-    .portfolio-side-gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 180px 180px;
-      gap: 14px;
-    }
-
-    .portfolio-side-gallery .gallery-card {
-      overflow: hidden;
-      border: 1px solid rgba(0,48,73,0.08);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-soft);
-      background: #f3f3f3;
-      min-height: 160px;
-    }
-
-    .portfolio-side-gallery .gallery-card img,
-    .portfolio-side-gallery .gallery-card video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .portfolio-side-gallery .wide {
-      grid-column: 1 / 3;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
-    }
-
-    .project-card {
-      position: relative;
-      min-height: 340px;
-      overflow: hidden;
-      border: 1px solid rgba(0,48,73,0.09);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      background: #f2f2f2;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .project-card.large { grid-column: span 7; min-height: 420px; }
-    .project-card.tall { grid-column: span 5; min-height: 420px; }
-    .project-card.medium { grid-column: span 4; }
-    .project-card.wide { grid-column: span 8; min-height: 300px; }
-
-    .project-card img,
-    .project-card video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .capabilities-section {
-      position: relative;
-      overflow: hidden;
-      background: #07111f;
-    }
-
-    .capabilities-bg-video {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .capabilities-bg-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .capabilities-bg-video::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(0,48,73,0.88) 0%,
-          rgba(214,40,40,0.34) 42%,
-          rgba(247,127,0,0.28) 70%,
-          rgba(252,191,73,0.18) 100%
-        );
-      backdrop-filter: blur(2px);
-    }
-
-    .capabilities-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .capabilities-layout {
-      display: grid;
-      grid-template-columns: 0.88fr 1.12fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .capabilities-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .capabilities-copy .eyebrow {
-      color: #ffffff;
-    }
-
-    .capabilities-copy h2 {
-      font-size: clamp(2.5rem, 5.4vw, 4.8rem);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-transform: none;
-      font-weight: 800;
-      max-width: 11ch;
-      color: #ffffff;
-    }
-
-    .capabilities-copy .mini-copy {
-      color: rgba(255,255,255,0.9);
-      max-width: 36rem;
-    }
-
-    .capabilities-video-column {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    .capabilities-video-card {
-      min-height: 250px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      background: rgba(255,255,255,0.08);
-      position: relative;
-      backdrop-filter: blur(6px);
-    }
-
-    .capabilities-video-card.video-top,
-    .capabilities-video-card.video-bottom {
-      min-height: 280px;
-    }
-
-    .capabilities-video-card video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .media-tag {
-      position: absolute;
-      left: 14px;
-      top: 14px;
-      padding: 8px 10px;
-      background: rgba(0,0,0,0.82);
-      color: #ffffff;
+      letter-spacing: 0.08em;
       font-size: 0.74rem;
       font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border-radius: 999px;
-      z-index: 2;
+      margin-bottom: 8px;
     }
 
-    .capabilities-marquee {
-      border-top: 1px solid rgba(255,255,255,0.18);
-      border-bottom: 1px solid rgba(255,255,255,0.18);
-      padding: 18px 0;
-      overflow: hidden;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(8px);
-      margin-top: 30px;
+    .stat h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.25rem;
+      line-height: 1.2;
     }
 
-    .marquee {
+    .stat p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .section {
+      padding: 26px 0 74px;
+    }
+
+    .section-heading {
       display: flex;
-      width: max-content;
-      animation: marqueeLeft 30s linear infinite;
-      will-change: transform;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
     }
 
-    .marquee:hover {
-      animation-play-state: paused;
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--navy);
     }
 
-    .marquee-group {
-      display: flex;
-      align-items: center;
+    .section-heading p {
+      margin: 0;
+      max-width: 58ch;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 600;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      padding-right: 18px;
     }
 
-    .cap-item {
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,48,73,0.09);
+      background: rgba(255,255,255,0.82);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.78;
+      font-weight: 600;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      min-height: 58px;
-      padding: 0 20px;
-      white-space: nowrap;
-      transition: transform var(--transition), color var(--transition);
-      color: #ffffff;
-    }
-
-    .cap-item:hover {
-      transform: translateY(-2px);
-      color: #ffffff;
-    }
-
-    .cap-item span:last-child {
-      font-size: 0.96rem;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--navy);
+      font-size: 0.78rem;
       font-weight: 800;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      letter-spacing: 0.01em;
+      border: 1px solid rgba(0,48,73,0.08);
     }
 
-    .proof-section {
-      background: linear-gradient(180deg, #ffffff 0%, #f7f3e7 100%);
-    }
-
-    .proof-grid {
+    .placeholder {
+      min-height: 240px;
       display: grid;
-      grid-template-columns: 0.96fr 1.04fr;
-      gap: 28px;
+      align-content: space-between;
+    }
+
+    .placeholder .empty-note {
+      margin-top: 22px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(0,48,73,0.04);
+      border: 1px dashed rgba(0,48,73,0.18);
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .work-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .work-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px dashed rgba(0,48,73,0.14);
+    }
+
+    .work-item:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .work-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.03rem;
+      margin-bottom: 6px;
+    }
+
+    .work-item span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .cta-panel {
+      padding: 34px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #003049 0%, #163f59 100%);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .cta-panel p {
+      margin: 0;
+      max-width: 56ch;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.8;
+      font-weight: 600;
+    }
+
+    .cta-actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cta-panel .btn-primary {
+      background: var(--yellow);
+      color: var(--navy);
+    }
+
+    .cta-panel .btn-primary:hover {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .cta-panel .btn-secondary {
+      color: #fff;
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .footer {
+      padding: 26px 0 34px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
       align-items: start;
     }
 
-    .proof-copy h2 {
-      font-size: clamp(2.45rem, 5.2vw, 4.6rem);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-transform: none;
-      font-weight: 800;
-      max-width: 12ch;
-      color: var(--brand-navy);
-    }
-
-    .proof-copy p {
-      margin-top: 16px;
-      font-size: 1rem;
-      line-height: 1.82;
-      color: #111111;
-      font-weight: 700;
-      max-width: 36rem;
-    }
-
-    .proof-banners {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    .proof-banner {
-      min-height: 340px;
-      padding: 22px 18px 28px;
-      background: #ffffff;
-      border: 1px solid rgba(0,48,73,0.12);
-      border-radius: 22px;
-      box-shadow: var(--shadow-soft);
-      clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 14px;
-      justify-content: flex-start;
-      transform: translateY(18px);
-      transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
-    }
-
-    .proof-banner:nth-child(1) { border-top: 4px solid var(--brand-navy); }
-    .proof-banner:nth-child(2) { border-top: 4px solid var(--brand-red); }
-    .proof-banner:nth-child(3) { border-top: 4px solid var(--brand-orange); }
-    .proof-banner:nth-child(4) { border-top: 4px solid var(--brand-yellow); }
-
-    .proof-banner:hover {
-      transform: translateY(0px);
-      background: #111111;
-      color: #ffffff;
-      border-color: #111111;
-    }
-
-    .proof-banner h3 {
-      font-size: 1rem;
-      line-height: 1.24;
-      text-transform: none;
-      letter-spacing: -0.01em;
-      font-weight: 800;
-      text-align: center;
-    }
-
-    .proof-banner p {
-      font-size: 0.93rem;
-      line-height: 1.72;
-      color: #333333;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .proof-banner:hover p,
-    .proof-banner:hover h3,
-    .proof-banner:hover .proof-icon {
-      color: #ffffff;
-    }
-
-    .proof-banner:hover .proof-icon {
-      background: #111111;
-      border-color: rgba(255,255,255,0.28);
-    }
-
-    .contact-section {
-      background: linear-gradient(180deg, #f8f6f1 0%, #ffffff 100%);
-      border-bottom: 0;
-    }
-
-    .contact-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      padding: 34px;
-      border: 1px solid rgba(0,48,73,0.08);
-      border-radius: 28px;
-      box-shadow: var(--shadow-md);
-      background:
-        radial-gradient(circle at 12% 22%, rgba(214,40,40,0.08), transparent 20%),
-        radial-gradient(circle at 92% 16%, rgba(247,127,0,0.11), transparent 22%),
-        radial-gradient(circle at 80% 82%, rgba(252,191,73,0.16), transparent 26%),
-        linear-gradient(135deg, #ffffff 0%, #f7f1df 100%);
-    }
-
-    .contact-card h2 {
-      font-size: clamp(2.45rem, 5vw, 4.4rem);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      text-transform: none;
-      font-weight: 800;
-      max-width: 12ch;
-      color: var(--brand-navy);
-    }
-
-    .contact-card p {
-      margin-top: 16px;
-      font-size: 1rem;
-      line-height: 1.8;
+    .footer p,
+    .footer li,
+    .footer a {
       color: var(--muted);
-      font-weight: 700;
-      max-width: 36rem;
+      line-height: 1.8;
+      font-size: 0.94rem;
+      font-weight: 600;
     }
 
-    .contact-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: center;
-      gap: 16px;
-      min-width: 0;
+    .footer h4 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1rem;
     }
 
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      width: 100%;
-    }
-
-    .contact-mini-gallery {
+    .footer-links {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      width: 100%;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
     }
 
-    .contact-mini-gallery .mini {
-      min-height: 150px;
-      overflow: hidden;
-      border: 1px solid rgba(0,48,73,0.08);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-soft);
-      background: #f2f2f2;
-    }
-
-    .contact-mini-gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .site-footer {
-      border-top: 1px solid var(--line);
-      background: #ffffff;
-      padding: 14px 0 18px;
-    }
-
-    .site-footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      font-size: 0.78rem;
-      line-height: 1.55;
-      color: var(--muted-2);
-    }
-
-    .site-footer-legal {
-      display: flex;
-      align-items: center;
+    .mini-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
       gap: 8px;
-      flex-wrap: wrap;
     }
 
-    .site-footer-legal a {
-      color: var(--brand-navy);
-      font-weight: 700;
-    }
-
-    .site-footer-legal a:hover {
-      color: var(--brand-red);
-    }
-
-    @keyframes marqueeLeft {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    @media (max-width: 1180px) {
+    @media (max-width: 1024px) {
       .hero-grid,
-      .about-grid,
-      .capabilities-layout,
-      .proof-grid,
-      .contact-card,
-      .portfolio-head {
+      .grid-3,
+      .grid-2,
+      .footer-grid,
+      .footer-links {
         grid-template-columns: 1fr;
-      }
-
-      .work-strip,
-      .proof-banners,
-      .portfolio-marquee-static {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .project-card.large,
-      .project-card.tall,
-      .project-card.medium,
-      .project-card.wide {
-        grid-column: span 6;
-      }
-
-      .portfolio-side-gallery {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 180px;
-      }
-
-      .portfolio-side-gallery .wide {
-        grid-column: auto;
-      }
-
-      .about-video-stack {
-        grid-template-rows: 220px 220px;
-      }
-
-      .capabilities-video-card.video-top,
-      .capabilities-video-card.video-bottom {
-        min-height: 240px;
       }
     }
 
-    @media (max-width: 980px) {
-      .section {
-        padding: 56px 0;
-      }
-
-      .topbar-inner {
-        min-height: auto;
-        padding: 14px 12px;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .brand-mark {
-        min-width: 0;
-      }
-
-      .brand-mark img {
-        height: 50px;
-      }
-
-      .main-nav {
-        width: 100%;
-        justify-content: flex-start;
-        gap: 2px 14px;
-      }
-
-      .main-nav a {
-        min-height: 44px;
-        padding: 0 4px;
-        font-size: 0.98rem;
-      }
-
-      .hero-media {
-        min-height: auto;
-      }
-
-      .hero-video {
-        position: relative;
-        inset: auto;
-        width: 100%;
-        min-height: 320px;
-      }
-
-      .portfolio-grid {
-        gap: 14px;
-      }
-
-      .project-card.large,
-      .project-card.tall,
-      .project-card.medium,
-      .project-card.wide {
-        grid-column: span 12;
-      }
-
-      .contact-mini-gallery,
-      .portfolio-side-gallery {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .portfolio-side-gallery .wide {
-        grid-column: 1 / 3;
-      }
-
-      .about-video-stack {
-        grid-template-rows: 210px 210px;
-      }
-
-      .display-title {
-        font-size: clamp(2.5rem, 8.5vw, 4.2rem);
-      }
-
-      .hero-actions,
-      .contact-actions,
-      .contact-buttons {
-        width: 100%;
-      }
-
-      .hero-actions .cta-button,
-      .hero-actions .cta-button.secondary,
-      .contact-buttons .cta-button,
-      .contact-buttons .cta-button.secondary {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(100% - 24px, var(--container));
-      }
-
-      .section {
-        padding: 46px 0;
-      }
-
-      .main-nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .main-nav a {
-        justify-content: flex-start;
-        font-size: 1rem;
-      }
-
-      .work-strip,
-      .proof-banners,
-      .portfolio-marquee-static {
-        grid-template-columns: 1fr;
-      }
-
-      .portfolio-marquee-static span {
-        min-height: auto;
-        padding: 12px 0;
-      }
-
-      .about-panel {
-        padding: 20px 18px;
-      }
-
-      .about-panel h2 {
-        font-size: clamp(1.9rem, 8vw, 2.8rem);
-        max-width: 100%;
-      }
-
-      .about-panel p,
-      .proof-copy p,
-      .contact-card p,
-      .mini-copy {
-        max-width: 100%;
-        font-size: 0.95rem;
-        line-height: 1.68;
-      }
-
-      .about-video-stack {
-        grid-template-rows: 190px 190px;
-      }
-
-      .capabilities-video-card.video-top,
-      .capabilities-video-card.video-bottom {
-        min-height: 210px;
-      }
-
-      .portfolio-side-gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .portfolio-side-gallery .wide {
-        grid-column: auto;
-      }
-
-      .brand-mark img {
-        height: 46px;
-      }
-
-      .display-title {
-        font-size: clamp(2.15rem, 10vw, 3.2rem);
-        line-height: 0.98;
-        letter-spacing: -0.02em;
-      }
-
-      .hero-copy .display-title .line {
-        white-space: normal;
-      }
-
-      .portfolio-title,
-      .capabilities-copy h2,
-      .proof-copy h2,
-      .contact-card h2 {
-        font-size: clamp(2rem, 8vw, 2.9rem);
-        line-height: 1.02;
-        letter-spacing: -0.015em;
-        max-width: 100%;
-      }
-
-      .project-card,
-      .project-card.large,
-      .project-card.tall,
-      .project-card.medium,
-      .project-card.wide {
-        min-height: 240px;
-      }
-
-      .hero-video,
-      .about-video-card,
-      .capabilities-video-card {
-        border-radius: 18px;
-      }
-
-      .contact-card {
-        padding: 22px 18px;
-        border-radius: 22px;
-      }
-
-      .contact-buttons {
-        flex-direction: column;
-      }
-
-      .contact-mini-gallery {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .contact-mini-gallery .mini {
-        min-height: 88px;
-      }
-
-      .proof-banner {
-        min-height: auto;
-        clip-path: none;
-        border-radius: 18px;
-        padding: 20px 16px;
-        transform: none;
-      }
-
-      .site-footer {
-        padding: 14px 0 20px;
-      }
-
-      .site-footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .site-footer-legal {
-        gap: 6px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 24px, var(--container)); }
+      .topbar-inner { min-height: 74px; align-items: flex-start; padding: 14px 0; }
+      .nav { gap: 12px; }
+      .hero { padding: 44px 0 26px; }
+      .hero-copy, .hero-card, .card, .cta-panel { padding: 22px; }
+      .section { padding: 18px 0 54px; }
+      h1 { max-width: 100%; }
+      .work-item { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-  <div class="topbar-wrap" id="topbarWrap">
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a href="#home" class="brand-mark" aria-label="The Boss Agency home">
-          <img src="./assets/images/Boss New Logo.jpeg" alt="Boss Agency logo" />
-        </a>
 
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#process">Proof</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-  </div>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="https://thebossagency.co/" target="_blank" rel="noopener noreferrer">The Boss Agency Co</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <section id="home" class="section home-section">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <div class="eyebrow">Selected Work</div>
 
-            <h1 class="display-title">
-              <span class="line">WE KNOW</span>
-              <span class="line">WHAT WE DO</span>
-            </h1>
-
-            <p class="mini-copy">
-              We build digital presence with strategy, visual clarity, and execution that helps dental brands look stronger and convert better.
-            </p>
-
-            <div class="hero-actions">
-              <a class="cta-button" href="#work">View Projects</a>
-              <a class="cta-button secondary" href="#contact">Start a Project</a>
-            </div>
-          </div>
-
-          <div class="hero-media">
-            <div class="hero-video">
-              <video autoplay muted loop playsinline>
-                <source src="./assets/videos/introvideo.mp4" type="video/mp4" />
-              </video>
-            </div>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Digital Growth</div>
+          <h1>Elevate your brand with strategy that actually moves the business.</h1>
+          <p>
+            The Boss Agency Co helps businesses grow through data-driven strategies, creative execution,
+            branding support, web development, social media strategy, and digital visibility services built
+            to strengthen your online presence.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Book a Call</a>
+            <a class="btn btn-secondary" href="https://thebossagency.co/services/" target="_blank" rel="noopener noreferrer">Explore Services</a>
           </div>
         </div>
 
-        <div class="work-strip">
-          <div class="work-badge">
-            <strong>Brand Positioning</strong>
-            <span>Strategy / Messaging</span>
+        <aside class="hero-card">
+          <div class="stat">
+            <div class="stat-label">What we do</div>
+            <h3>Branding, visibility, and digital growth support</h3>
+            <p>Built for businesses that need a stronger presence, better positioning, and marketing that feels intentional.</p>
           </div>
 
-          <div class="work-badge">
-            <strong>Creative Direction</strong>
-            <span>Photo / Video / Design</span>
+          <div class="stat">
+            <div class="stat-label">Core focus</div>
+            <h3>Data-driven strategies + creative solutions</h3>
+            <p>Messaging and execution designed to elevate your brand in the digital landscape.</p>
           </div>
 
-          <div class="work-badge">
-            <strong>Campaign Systems</strong>
-            <span>Paid / Organic / Conversion</span>
+          <div class="stat">
+            <div class="stat-label">Primary paths</div>
+            <p>Web Development, Google My Business, Social Media Strategy, Brand Support, and growth-oriented consulting.</p>
           </div>
-
-          <div class="work-badge">
-            <strong>Execution That Looks Sharp</strong>
-            <span>Built To Perform</span>
-          </div>
-        </div>
+        </aside>
       </div>
     </section>
 
-    <section id="about" class="section about-section">
+    <section class="section" id="about">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-panel">
+        <div class="section-heading">
+          <h2>About The Boss Agency Co</h2>
+          <p>
+            This section replaces the original template founder story with a brand-aligned introduction.
+            The public site positions The Boss Agency Co as a partner helping businesses and non-profits
+            amplify their presence and achieve measurable success through digital marketing and strategic execution.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Who we are</h3>
+            <p>
+              We are building this section as a cleaner, more professional brand statement for The Boss Agency Co.
+              For now, this copy introduces the agency as a strategic creative partner focused on visibility,
+              positioning, and meaningful business growth.
+            </p>
+            <p>
+              This can later be edited with the founder story, mission statement, personal philosophy,
+              or a stronger agency narrative once you review the structure.
+            </p>
+          </article>
+
+          <article class="card placeholder">
             <div>
-              <div class="eyebrow">Portfolio Direction</div>
-              <h2>Real Results for Real Dental Practices.</h2>
+              <h3>Founder / brand story</h3>
+              <p>
+                This area was intentionally kept as a structured placeholder because the original template had story content
+                that does not belong to The Boss Agency Co.
+              </p>
             </div>
+            <div class="empty-note">
+              Placeholder left professionally blank for: founder note, values, vision, credentials, origin story, or team introduction.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Services</h2>
+          <p>
+            The public site references branding strategy, web development, Google My Business, and social media strategy,
+            so this section has been rewritten around those service lines while preserving a premium presentation.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Brand Strategy</h3>
             <p>
-              We present our work with intention, strong visual judgment, and a structure designed to make every project feel clear, elevated, and professional for modern dental brands.
+              Strategic direction for businesses that need better positioning, stronger messaging, and a clearer brand foundation.
             </p>
+            <div class="tag-list">
+              <span class="tag">Positioning</span>
+              <span class="tag">Messaging</span>
+              <span class="tag">Strategy</span>
+            </div>
+          </article>
 
+          <article class="card">
+            <h3>Web Development</h3>
+            <p>
+              Website support focused on presenting the brand clearly, building trust quickly, and guiding visitors toward action.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Website Build</span>
+              <span class="tag">UX</span>
+              <span class="tag">Conversion</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Social Media Strategy</h3>
+            <p>
+              Social content direction and platform strategy built to improve consistency, visibility, and audience connection.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Instagram</span>
+              <span class="tag">Content</span>
+              <span class="tag">Growth</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Google My Business</h3>
+            <p>
+              Local visibility support to help businesses strengthen discoverability and show up more professionally online.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Local SEO</span>
+              <span class="tag">Listings</span>
+              <span class="tag">Visibility</span>
+            </div>
+          </article>
+
+          <article class="card placeholder">
+            <div>
+              <h3>Additional Service</h3>
+              <p>
+                This card has been left intentionally broad so you can later add another offer that belongs on the homepage.
+              </p>
+            </div>
+            <div class="empty-note">
+              Placeholder for: ads, funnels, consulting, coaching, email marketing, CRM setup, or another signature service.
+            </div>
+          </article>
+
+          <article class="card placeholder">
+            <div>
+              <h3>Additional Service</h3>
+              <p>
+                Another blank but professionally styled block was added because the original template layout expected more service inventory.
+              </p>
+            </div>
+            <div class="empty-note">
+              Placeholder for future expansion or a signature offer highlight.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Selected Work</h2>
+          <p>
+            The live site already references projects including website design and client work,
+            so this section now reflects The Boss Agency Co instead of the template portfolio items.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Featured project list</h3>
+            <div class="work-list">
+              <div class="work-item">
+                <div>
+                  <strong>Systro Solutions</strong>
+                  <p>Homepage work / digital presence reference.</p>
+                </div>
+                <span>Website</span>
+              </div>
+
+              <div class="work-item">
+                <div>
+                  <strong>Action Zone Tampa</strong>
+                  <p>Client work reference included on the public portfolio.</p>
+                </div>
+                <span>Brand / Web</span>
+              </div>
+
+              <div class="work-item">
+                <div>
+                  <strong>Holistic Chef</strong>
+                  <p>Referenced as part of The Boss Agency Co portfolio examples.</p>
+                </div>
+                <span>Digital Presence</span>
+              </div>
+
+              <div class="work-item">
+                <div>
+                  <strong>Lux E Curtains</strong>
+                  <p>Portfolio placeholder adapted from the live public work listing.</p>
+                </div>
+                <span>Creative / Web</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card placeholder">
+            <div>
+              <h3>Case study spotlight</h3>
+              <p>
+                The original template had image-based project storytelling that does not yet map one-to-one to your brand.
+                I left this as a premium placeholder so you can decide which client or transformation deserves the main spotlight.
+              </p>
+            </div>
+            <div class="empty-note">
+              Placeholder for one detailed case study: challenge, solution, deliverables, and result.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Client Experience</h2>
+          <p>
+            The original template testimonials were removed because they belong to another brand.
+            This section is preserved in the layout but professionally reset for future real client proof.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card placeholder">
+            <div>
+              <h3>Testimonial 01</h3>
+              <p>Reserved for a real client quote from The Boss Agency Co.</p>
+            </div>
+            <div class="empty-note">Add client name, role, company, and outcome.</div>
+          </article>
+
+          <article class="card placeholder">
+            <div>
+              <h3>Testimonial 02</h3>
+              <p>Structured placeholder left intentionally blank.</p>
+            </div>
+            <div class="empty-note">Use for social proof tied to branding, web, or social media results.</div>
+          </article>
+
+          <article class="card placeholder">
+            <div>
+              <h3>Testimonial 03</h3>
+              <p>Formatted to match the rest of the site while awaiting approved testimonial content.</p>
+            </div>
+            <div class="empty-note">Optional: insert metrics, screenshots, or before/after outcomes later.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="blog">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Blog & Resources</h2>
+          <p>
+            The Boss Agency Co has an active blog and free resource section, so this part now points to that ecosystem
+            instead of the generic Framer template blog feed.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Insights for business growth</h3>
+            <p>
+              The blog includes marketing and business education content, including niche selection guidance
+              and other growth-oriented topics for entrepreneurs and business owners.
+            </p>
             <div class="hero-actions">
-              <a class="cta-button" href="#work">See the Work</a>
-              <a class="cta-button secondary" href="#process">How We Work</a>
+              <a class="btn btn-secondary" href="https://thebossagency.co/blog/" target="_blank" rel="noopener noreferrer">Visit Blog</a>
+              <a class="btn btn-secondary" href="https://thebossagency.co/freebies2/" target="_blank" rel="noopener noreferrer">View Freebies</a>
             </div>
-          </div>
+          </article>
 
-          <div class="about-video-stack">
-            <div class="about-video-card">
-              <video autoplay muted loop playsinline>
-                <source src="./assets/videos/Grabación 2026-06-05 185803.mp4" type="video/mp4" />
-              </video>
+          <article class="card placeholder">
+            <div>
+              <h3>Featured article block</h3>
+              <p>
+                This content area was preserved from the old structure but left open so you can later choose a specific article
+                or lead magnet to feature on the homepage.
+              </p>
             </div>
-
-            <div class="about-video-card">
-              <video autoplay muted loop playsinline>
-                <source src="./assets/videos/Grabación 2026-06-05 185845.mp4" type="video/mp4" />
-              </video>
+            <div class="empty-note">
+              Placeholder for featured article, lead magnet, checklist, or newsletter invitation.
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work" class="section portfolio-section">
-      <div class="portfolio-marquee-bar">
-        <div class="portfolio-marquee-static">
-          <span>Web Design &amp; Landing Pages</span>
-          <span>Brand Messaging &amp; Positioning</span>
-          <span>Photo, Video &amp; Creative Direction</span>
-          <span>Paid Media &amp; Conversion Systems</span>
-        </div>
-      </div>
-
-      <div class="container portfolio-inner">
-        <div class="portfolio-head">
-          <div class="portfolio-title-wrap">
-            <div class="eyebrow">Featured Projects</div>
-            <h2 class="portfolio-title">Dental Brands That Stand Out and Convert</h2>
-          </div>
-
-          <div class="portfolio-side-gallery">
-            <div class="gallery-card">
-              <img src="./assets/images/Captura de pantalla 2026-06-05 183508.png" alt="Featured project preview one" />
-            </div>
-
-            <div class="gallery-card">
-              <img src="./assets/images/Captura de pantalla 2026-06-05 183618.png" alt="Featured project preview two" />
-            </div>
-
-            <div class="gallery-card wide">
-              <video autoplay muted loop playsinline>
-                <source src="./assets/videos/Grabación 2026-06-05 185922.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-grid">
-          <article class="project-card large">
-            <img src="./assets/images/Captura de pantalla 2026-06-05 183821.png" alt="Featured project layout one" />
-          </article>
-
-          <article class="project-card tall">
-            <video autoplay muted loop playsinline>
-              <source src="./assets/videos/Grabación 2026-06-05 185658.mp4" type="video/mp4" />
-            </video>
-          </article>
-
-          <article class="project-card medium">
-            <img src="./assets/images/Captura de pantalla 2026-06-05 184102.png" alt="Featured project layout two" />
-          </article>
-
-          <article class="project-card medium">
-            <img src="./assets/images/Captura de pantalla 2026-06-05 184144.png" alt="Featured project layout three" />
-          </article>
-
-          <article class="project-card medium">
-            <img src="./assets/images/Captura de pantalla 2026-06-05 184209.png" alt="Featured project layout four" />
-          </article>
-
-          <article class="project-card wide">
-            <img src="./assets/images/Captura de pantalla 2026-06-05 184304.png" alt="Wide featured case study preview" />
-          </article>
-
-          <article class="project-card medium">
-            <img src="./assets/images/Captura de pantalla 2026-06-05 184316.png" alt="Featured project layout five" />
-          </article>
-
-          <article class="project-card medium">
-            <img src="./assets/images/Captura de pantalla 2026-06-05 185001.png" alt="Featured project layout six" />
-          </article>
-
-          <article class="project-card medium">
-            <img src="./assets/images/Captura de pantalla 2026-06-05 185059.png" alt="Featured project layout seven" />
           </article>
         </div>
       </div>
     </section>
 
-    <section id="services" class="section capabilities-section">
-      <div class="capabilities-bg-video">
-        <video autoplay muted loop playsinline>
-          <source src="assets/videos/13986255_2160_3840_25fps.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div class="container capabilities-inner">
-        <div class="capabilities-layout">
-          <div class="capabilities-copy">
-            <div class="eyebrow">Capabilities</div>
-            <h2>More Patients. Better Presence. Stronger Practice.</h2>
-
-            <p class="mini-copy">
-              We create digital presence with strategy, visual execution, and systems designed to position every dental office more clearly across web, creative, and performance media.
-            </p>
-          </div>
-
-          <div class="capabilities-video-column">
-            <div class="capabilities-video-card video-top">
-              <span class="media-tag">Creative Video</span>
-              <video autoplay muted loop playsinline>
-                <source src="./assets/videos/Siempre ten presente el control dental de tus hijos, estamos Para servirte y hacer de su visita .mp4" type="video/mp4" />
-              </video>
-            </div>
-
-            <div class="capabilities-video-card video-bottom">
-              <span class="media-tag">Program Video</span>
-              <video autoplay muted loop playsinline>
-                <source src="./assets/videos/¡Ponte los guantes y sé parte de nuestra Primera Generación de Asistentes Dentales! Estamos a po.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <div class="capabilities-marquee">
-          <div class="marquee">
-            <div class="marquee-group">
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9Z"></path>
-                    <path d="M12 20V11"></path>
-                    <path d="M20 7.5 12 11 4 7.5"></path>
-                  </svg>
-                </span>
-                <span>Brand Positioning</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-                    <path d="M3 9h18"></path>
-                    <path d="M8 4v16"></path>
-                  </svg>
-                </span>
-                <span>Web Design</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                    <path d="m10 9 5 3-5 3V9Z"></path>
-                  </svg>
-                </span>
-                <span>Video Content</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 19V9"></path>
-                    <path d="M10 19V5"></path>
-                    <path d="M16 19v-7"></path>
-                    <path d="M22 19V3"></path>
-                  </svg>
-                </span>
-                <span>Paid Campaigns</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 19h16"></path>
-                    <path d="m5 15 4-4 3 3 6-7"></path>
-                  </svg>
-                </span>
-                <span>Conversion Systems</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3.5"></circle>
-                    <path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6Z"></path>
-                  </svg>
-                </span>
-                <span>Creative Direction</span>
-              </div>
-            </div>
-
-            <div class="marquee-group" aria-hidden="true">
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9Z"></path>
-                    <path d="M12 20V11"></path>
-                    <path d="M20 7.5 12 11 4 7.5"></path>
-                  </svg>
-                </span>
-                <span>Brand Positioning</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-                    <path d="M3 9h18"></path>
-                    <path d="M8 4v16"></path>
-                  </svg>
-                </span>
-                <span>Web Design</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                    <path d="m10 9 5 3-5 3V9Z"></path>
-                  </svg>
-                </span>
-                <span>Video Content</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 19V9"></path>
-                    <path d="M10 19V5"></path>
-                    <path d="M16 19v-7"></path>
-                    <path d="M22 19V3"></path>
-                  </svg>
-                </span>
-                <span>Paid Campaigns</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 19h16"></path>
-                    <path d="m5 15 4-4 3 3 6-7"></path>
-                  </svg>
-                </span>
-                <span>Conversion Systems</span>
-              </div>
-
-              <div class="cap-item">
-                <span class="icon-glass">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3.5"></circle>
-                    <path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6Z"></path>
-                  </svg>
-                </span>
-                <span>Creative Direction</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" class="section proof-section">
+    <section class="section">
       <div class="container">
-        <div class="proof-grid">
-          <div class="proof-copy">
-            <div class="eyebrow">Why It Works</div>
-            <h2>Built Specifically for Dental Practices</h2>
-            <p>
-              Our goal is to show quality quickly, with a clear mix of strategy, visual direction, and execution that feels premium from the first scroll on both desktop and mobile.
-            </p>
-          </div>
-
-          <div class="proof-banners">
-            <article class="proof-banner">
-              <span class="icon-glass proof-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19V9"></path>
-                  <path d="M10 19V5"></path>
-                  <path d="M16 19v-7"></path>
-                  <path d="M22 19V3"></path>
-                </svg>
-              </span>
-              <h3>Clear Taste</h3>
-              <p>Visual restraint, balanced typography, and strong presentation choices make the work feel more credible.</p>
-            </article>
-
-            <article class="proof-banner">
-              <span class="icon-glass proof-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                  <path d="m10 9 5 3-5 3V9Z"></path>
-                </svg>
-              </span>
-              <h3>Real Media</h3>
-              <p>Photos, reels, and visual assets do the heavy lifting instead of too much explanatory text.</p>
-            </article>
-
-            <article class="proof-banner">
-              <span class="icon-glass proof-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19h16"></path>
-                  <path d="m5 15 4-4 3 3 6-7"></path>
-                </svg>
-              </span>
-              <h3>Fast Signal</h3>
-              <p>Visitors understand the quality of your dental brand much faster when the presentation feels clean and direct.</p>
-            </article>
-
-            <article class="proof-banner">
-              <span class="icon-glass proof-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9Z"></path>
-                  <path d="M12 20V11"></path>
-                  <path d="M20 7.5 12 11 4 7.5"></path>
-                </svg>
-              </span>
-              <h3>Room To Grow</h3>
-              <p>The structure stays flexible so you can keep adding more campaigns and cases without damaging the layout.</p>
-            </article>
+        <div class="cta-panel">
+          <h2>It’s time to level up your brand.</h2>
+          <p>
+            This call-to-action replaces the template CTA with a brand-aligned message based on The Boss Agency Co’s public positioning.
+            It is ready for later edits, but already strong enough to preview professionally on the page.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Book a Discovery Call</a>
+            <a class="btn btn-secondary" href="https://thebossagency.co/our-work/" target="_blank" rel="noopener noreferrer">See Our Work</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact-section">
+    <section class="section" id="contact">
       <div class="container">
-        <div class="contact-card">
-          <div>
-            <div class="eyebrow">Next Move</div>
-            <h2>Ready to Grow Your Dental Practice?</h2>
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>
+            The original fake email, phone number, and sample address were removed.
+            This section now keeps only verified brand-safe contact direction and leaves room for your final preferred details.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Get in touch</h3>
             <p>
-              Keep this last section simple. One strong call to action, a clean gallery, and enough confidence to close the page with authority across desktop and mobile.
+              Use the official contact page to connect with The Boss Agency Co, request services,
+              or book a business and marketing discovery conversation.
             </p>
-          </div>
-
-          <div class="contact-actions">
-            <div class="contact-buttons">
-              <a
-                class="cta-button"
-                href="https://api.leadconnectorhq.com/widget/booking/VUfZYj7AYUF48jbztrBw"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Claim Your Strategy Call
-              </a>
-
-              <a class="cta-button secondary" href="#work">
-                Back to Work
-              </a>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Open Contact Page</a>
             </div>
+          </article>
 
-            <div class="contact-mini-gallery">
-              <div class="mini">
-                <img src="./assets/images/Captura de pantalla 2026-06-05 183508.png" alt="Gallery preview one" />
-              </div>
-
-              <div class="mini">
-                <img src="./assets/images/Captura de pantalla 2026-06-05 183618.png" alt="Gallery preview two" />
-              </div>
-
-              <div class="mini">
-                <img src="./assets/images/Captura de pantalla 2026-06-05 185114.png" alt="Gallery preview three" />
-              </div>
+          <article class="card placeholder">
+            <div>
+              <h3>Direct contact details</h3>
+              <p>
+                This block was intentionally left without phone, email, or address because the template values were fake
+                and I only kept public-safe replacements.
+              </p>
             </div>
-          </div>
+            <div class="empty-note">
+              Placeholder for your preferred business email, phone, social links, office location, or booking widget.
+            </div>
+          </article>
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="container site-footer-inner">
-      <div>© 2026 All rights reserved</div>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>The Boss Agency Co</h4>
+        <p>
+          We specialize in driving results through data-driven strategies and creative solutions
+          that elevate your brand in the digital landscape.
+        </p>
+        <p>© 2026 All rights reserved.</p>
+      </div>
 
-      <div class="site-footer-legal">
-        <a href="terms-conditions.html">Terms &amp; Conditions</a>
-        <span>|</span>
-        <a href="privacy-policy.html">Privacy Policy</a>
+      <div class="footer-links">
+        <div>
+          <h4>Pages</h4>
+          <ul class="mini-list">
+            <li><a href="https://thebossagency.co/" target="_blank" rel="noopener noreferrer">Home</a></li>
+            <li><a href="https://thebossagency.co/about/" target="_blank" rel="noopener noreferrer">About</a></li>
+            <li><a href="https://thebossagency.co/services/" target="_blank" rel="noopener noreferrer">Services</a></li>
+            <li><a href="https://thebossagency.co/our-work/" target="_blank" rel="noopener noreferrer">Our Work</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>More</h4>
+          <ul class="mini-list">
+            <li><a href="https://thebossagency.co/blog/" target="_blank" rel="noopener noreferrer">Blog</a></li>
+            <li><a href="https://thebossagency.co/contact/" target="_blank" rel="noopener noreferrer">Contact</a></li>
+            <li><a href="https://thebossagency.co/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li><a href="https://thebossagency.co/login-2/" target="_blank" rel="noopener noreferrer">Book Discovery Call</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const topbar = document.getElementById("topbarWrap");
-      let lastScroll = window.scrollY;
-
-      window.addEventListener(
-        "scroll",
-        function () {
-          const currentScroll = window.scrollY;
-
-          if (currentScroll > lastScroll && currentScroll > 80) {
-            topbar.classList.add("is-hidden");
-          } else {
-            topbar.classList.remove("is-hidden");
-          }
-
-          lastScroll = currentScroll;
-        },
-        { passive: true }
-      );
-    })();
-  </script>
 </body>
 </html>
