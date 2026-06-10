@@ -348,49 +348,51 @@
       color:var(--brand-navy);
     }
 
-    /* SERVICES REDESIGN */
     .services-section{
-      padding:78px 0 96px;
+      padding:72px 0 96px;
     }
 
     .services-shell{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:44px;
+      grid-template-columns:minmax(320px, 430px) minmax(420px, 1fr);
+      gap:22px;
       align-items:center;
+      max-width:1120px;
+      margin:0 auto;
     }
 
     .services-visual{
       position:relative;
-      min-height:620px;
+      min-height:560px;
       display:flex;
       align-items:flex-end;
-      justify-content:flex-start;
+      justify-content:center;
     }
 
     .services-photo-stage{
       position:relative;
-      width:min(520px, 100%);
-      height:620px;
+      width:100%;
+      max-width:390px;
+      height:540px;
     }
 
     .services-blob-yellow{
       position:absolute;
-      left:34px;
-      bottom:122px;
-      width:240px;
-      height:240px;
+      left:46px;
+      bottom:112px;
+      width:210px;
+      height:210px;
       background:var(--brand-yellow);
-      border-radius:180px 180px 24px 24px;
+      border-radius:180px 180px 28px 28px;
       z-index:1;
     }
 
     .services-dot-grid{
       position:absolute;
-      left:42px;
+      left:40px;
       bottom:34px;
-      width:170px;
-      height:120px;
+      width:148px;
+      height:104px;
       background-image:radial-gradient(rgba(0,48,73,.55) 1.1px, transparent 1.1px);
       background-size:8px 8px;
       opacity:.45;
@@ -399,11 +401,11 @@
 
     .services-photo-wrap{
       position:absolute;
-      left:56px;
+      left:72px;
       bottom:0;
-      width:312px;
-      height:392px;
-      border-radius:180px 180px 26px 26px;
+      width:264px;
+      height:360px;
+      border-radius:170px 170px 24px 24px;
       overflow:hidden;
       z-index:3;
       box-shadow:0 25px 50px rgba(0,48,73,.16);
@@ -429,8 +431,8 @@
     }
 
     .services-mini-badge.one{
-      top:96px;
-      left:56px;
+      top:58px;
+      left:88px;
       width:46px;
       height:46px;
       font-size:22px;
@@ -438,19 +440,19 @@
     }
 
     .services-mini-badge.two{
-      top:42px;
-      left:104px;
+      top:18px;
+      left:154px;
       width:56px;
       height:56px;
       font-size:28px;
-      transform:rotate(10deg);
+      transform:rotate(8deg);
     }
 
     .services-mini-badge.three{
-      top:132px;
-      left:122px;
-      width:62px;
-      height:62px;
+      top:120px;
+      left:34px;
+      width:60px;
+      height:60px;
       font-size:30px;
       background:var(--brand-orange);
       color:#fff;
@@ -458,17 +460,17 @@
     }
 
     .services-mini-badge.four{
-      top:138px;
-      left:318px;
-      width:54px;
-      height:54px;
-      font-size:28px;
+      top:102px;
+      left:304px;
+      width:52px;
+      height:52px;
+      font-size:26px;
       transform:rotate(8deg);
     }
 
     .services-mini-badge.five{
-      top:236px;
-      left:24px;
+      top:234px;
+      left:20px;
       width:42px;
       height:42px;
       font-size:20px;
@@ -476,89 +478,33 @@
     }
 
     .services-mini-badge.six{
-      top:222px;
-      left:286px;
-      width:48px;
-      height:48px;
-      font-size:22px;
-      transform:rotate(9deg);
+      top:232px;
+      left:314px;
+      width:46px;
+      height:46px;
+      font-size:21px;
+      transform:rotate(8deg);
     }
 
     .services-spark{
       position:absolute;
       z-index:4;
       color:#111;
-      font-size:44px;
+      font-size:34px;
       line-height:1;
     }
 
-    .services-spark.one{ top:154px; right:16px; }
-    .services-spark.two{ top:238px; left:18px; font-size:38px; }
-    .services-spark.three{ top:62px; right:108px; font-size:34px; }
-
-    .services-overlay-card{
-      position:absolute;
-      right:12px;
-      bottom:84px;
-      width:228px;
-      background:rgba(255,255,255,.96);
-      border:1px solid rgba(0,48,73,.10);
-      border-radius:18px;
-      box-shadow:0 18px 36px rgba(0,48,73,.14);
-      padding:14px 14px 12px;
-      z-index:5;
-    }
-
-    .services-overlay-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      font-size:11px;
-      color:var(--muted);
-      margin-bottom:12px;
-    }
-
-    .services-chat{
-      display:grid;
-      gap:8px;
-    }
-
-    .services-chat-bubble{
-      border-radius:14px;
-      padding:10px 12px;
-      font-size:12px;
-      line-height:1.45;
-    }
-
-    .services-chat-bubble.light{
-      background:#f4f1ea;
-      color:var(--muted);
-    }
-
-    .services-chat-bubble.dark{
-      background:rgba(0,48,73,.92);
-      color:#fff;
-      justify-self:end;
-      max-width:85%;
-    }
-
-    .services-chat-toolbar{
-      margin-top:12px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      color:var(--muted);
-      font-size:12px;
-    }
+    .services-spark.one{ top:58px; left:286px; }
+    .services-spark.two{ top:194px; left:62px; font-size:30px; }
+    .services-spark.three{ top:170px; left:270px; font-size:28px; }
 
     .services-tagline{
       position:absolute;
-      left:16px;
-      bottom:18px;
+      left:18px;
+      bottom:14px;
       z-index:6;
       margin:0;
-      font-size:clamp(2.2rem, 5vw, 4rem);
+      font-size:clamp(2rem, 4vw, 3.2rem);
       line-height:.88;
       letter-spacing:-.07em;
       text-transform:uppercase;
@@ -572,8 +518,7 @@
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      min-height:620px;
-      padding-right:14px;
+      min-height:560px;
       text-align:center;
     }
 
@@ -581,7 +526,7 @@
       display:flex;
       flex-wrap:nowrap;
       gap:24px;
-      margin-bottom:42px;
+      margin-bottom:26px;
       width:100%;
       justify-content:center;
       align-items:flex-start;
@@ -605,8 +550,8 @@
     }
 
     .service-tab svg{
-      width:30px;
-      height:30px;
+      width:28px;
+      height:28px;
       stroke:currentColor;
       fill:none;
       stroke-width:1.9;
@@ -619,27 +564,24 @@
     }
 
     .services-word{
-      margin:0 0 18px;
-      font-size:clamp(4rem, 8vw, 7.2rem);
-      line-height:.88;
+      margin:0 0 14px;
+      font-size:clamp(2.9rem, 5.4vw, 4.5rem);
+      line-height:.9;
       letter-spacing:-.08em;
       text-transform:uppercase;
       color:var(--brand-red);
-      align-self:center;
-      text-align:center;
       width:100%;
     }
 
     .services-copy{
-      max-width:34rem;
-      align-self:center;
+      max-width:31rem;
       width:100%;
     }
 
     .services-copy h3{
-      margin:0 0 14px;
-      font-size:clamp(2rem, 3.4vw, 3.35rem);
-      line-height:.95;
+      margin:0 0 12px;
+      font-size:clamp(1.55rem, 2.8vw, 2.35rem);
+      line-height:1;
       letter-spacing:-.05em;
       color:var(--text);
     }
@@ -647,16 +589,16 @@
     .services-copy p{
       margin:0 0 22px;
       color:var(--muted);
-      font-size:1.05rem;
-      line-height:1.8;
+      font-size:1rem;
+      line-height:1.78;
     }
 
     .services-cta{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:58px;
-      padding:0 34px;
+      min-height:56px;
+      padding:0 32px;
       border-radius:8px;
       background:var(--brand-navy);
       color:#fff;
@@ -872,15 +814,12 @@
         min-height:auto;
       }
 
-      .services-content{
-        min-height:auto;
-        padding-right:0;
+      .services-shell{
+        gap:12px;
       }
 
-      .services-word,
-      .services-copy{
-        align-self:center;
-        text-align:center;
+      .services-content{
+        min-height:auto;
       }
 
       .services-tabs{
@@ -941,6 +880,7 @@
         gap:14px;
         justify-content:center;
         flex-wrap:wrap;
+        margin-bottom:22px;
       }
 
       .service-tab{
@@ -949,48 +889,41 @@
       }
 
       .services-visual{
-        min-height:520px;
+        min-height:500px;
       }
 
       .services-photo-stage{
-        height:520px;
+        height:500px;
       }
 
       .services-photo-wrap{
-        left:38px;
-        width:250px;
-        height:330px;
+        left:52px;
+        width:232px;
+        height:318px;
       }
 
       .services-blob-yellow{
-        left:16px;
-        width:200px;
-        height:200px;
-        bottom:104px;
-      }
-
-      .services-overlay-card{
-        width:190px;
-        right:0;
-        bottom:76px;
+        left:30px;
+        width:188px;
+        height:188px;
+        bottom:98px;
       }
 
       .services-tagline{
-        font-size:clamp(1.8rem, 9vw, 3rem);
+        font-size:clamp(1.8rem, 9vw, 2.8rem);
         max-width:9ch;
-        left:10px;
+        left:14px;
       }
 
-      .services-word{
-        font-size:clamp(3rem, 14vw, 4.8rem);
-      }
-
-      .services-mini-badge.one{ top:86px; left:34px; }
-      .services-mini-badge.two{ top:34px; left:76px; }
-      .services-mini-badge.three{ top:118px; left:92px; }
-      .services-mini-badge.four{ top:128px; left:252px; }
+      .services-mini-badge.one{ top:54px; left:72px; }
+      .services-mini-badge.two{ top:16px; left:132px; }
+      .services-mini-badge.three{ top:116px; left:18px; }
+      .services-mini-badge.four{ top:100px; left:266px; }
       .services-mini-badge.five{ top:214px; left:10px; }
-      .services-mini-badge.six{ top:204px; left:236px; }
+      .services-mini-badge.six{ top:214px; left:272px; }
+      .services-spark.one{ top:52px; left:250px; }
+      .services-spark.two{ top:182px; left:52px; }
+      .services-spark.three{ top:160px; left:238px; }
     }
   </style>
 </head>
@@ -1125,21 +1058,6 @@
 
               <div class="services-photo-wrap">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" alt="Founder portrait" />
-              </div>
-
-              <div class="services-overlay-card">
-                <div class="services-overlay-top">
-                  <span>Strategy flow</span>
-                  <span>Active</span>
-                </div>
-                <div class="services-chat">
-                  <div class="services-chat-bubble light">We map the brand, the offer, and the next growth move.</div>
-                  <div class="services-chat-bubble dark">Clear systems. Better visibility. Stronger execution.</div>
-                </div>
-                <div class="services-chat-toolbar">
-                  <span>⚙︎ • ✎ • ⌁</span>
-                  <span>Send ↗</span>
-                </div>
               </div>
 
               <h2 class="services-tagline">WE KNOW WHAT WE DO</h2>
