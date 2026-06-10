@@ -30,6 +30,7 @@
       --brand-yellow:#FCBF49;
       --brand-cream:#ffffff;
       --brand-blue-panel:#0d3f63;
+      --brand-blue-deep:#08395c;
       --brand-blue-soft:#174f78;
 
       --dark:#16110d;
@@ -43,7 +44,6 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-
     body{
       margin:0;
       font-family:"Be Vietnam Pro",sans-serif;
@@ -70,9 +70,7 @@
       transition:transform .34s ease;
     }
 
-    body.menu-open .menu-shell{
-      transform:translateX(0);
-    }
+    body.menu-open .menu-shell{ transform:translateX(0); }
 
     .menu-trigger{
       width:var(--menu-rail-width);
@@ -231,9 +229,7 @@
       background:#ffffff;
     }
 
-    body.menu-open .layout{
-      margin-left:var(--menu-total-width);
-    }
+    body.menu-open .layout{ margin-left:var(--menu-total-width); }
 
     .content{
       padding:24px;
@@ -283,24 +279,26 @@
     }
 
     .hero-showcase{
-      margin:2px auto 0;
+      margin:8px auto 0;
       width:100%;
-      max-width:none;
-      min-height:300px;
+      max-width:1180px;
+      min-height:250px;
       position:relative;
       display:block;
-      overflow:hidden;
+      overflow:visible;
     }
 
     .hero-ribbon{
       position:relative;
       width:100%;
-      min-height:300px;
+      height:260px;
+      max-width:1080px;
+      margin:0 auto;
     }
 
     .hero-sweep{
       position:absolute;
-      bottom:-42px;
+      bottom:0;
       border-radius:220px 220px 26px 26px;
       filter:blur(.1px);
       transform-origin:bottom center;
@@ -308,74 +306,69 @@
     }
 
     .hero-sweep.s1{
-      left:-3%;
-      width:20%;
-      height:190px;
+      left:6%;
+      width:14%;
+      height:125px;
       background:linear-gradient(180deg, #8E002A 0%, #B50036 100%);
       transform:rotate(-16deg);
     }
-
     .hero-sweep.s2{
-      left:8%;
-      width:18%;
-      height:255px;
+      left:17%;
+      width:13%;
+      height:168px;
       background:linear-gradient(180deg, #F36B00 0%, #F77F00 100%);
       transform:rotate(-10deg);
     }
-
     .hero-sweep.s3{
-      left:22%;
-      width:17%;
-      height:320px;
+      left:29%;
+      width:13%;
+      height:205px;
       background:linear-gradient(180deg, #F6C51C 0%, #FCBF49 100%);
       transform:rotate(-4deg);
     }
-
     .hero-sweep.s4{
-      left:38%;
-      width:15%;
-      height:390px;
+      left:42%;
+      width:11%;
+      height:250px;
       background:linear-gradient(180deg, #4340D5 0%, #5A54EA 100%);
       transform:rotate(0deg);
     }
-
     .hero-sweep.s5{
-      left:51%;
-      width:16%;
-      height:340px;
+      left:53%;
+      width:12%;
+      height:220px;
       background:linear-gradient(180deg, #51C7EB 0%, #6ADCF8 100%);
       transform:rotate(5deg);
     }
-
     .hero-sweep.s6{
       left:64%;
-      width:18%;
-      height:280px;
+      width:13%;
+      height:180px;
       background:linear-gradient(180deg, #64E3B0 0%, #7AEEBE 100%);
       transform:rotate(11deg);
     }
-
     .hero-sweep.s7{
-      left:78%;
-      width:22%;
-      height:220px;
+      left:75%;
+      width:16%;
+      height:142px;
       background:linear-gradient(180deg, #D7F03A 0%, #E7F75C 100%);
       transform:rotate(8deg);
     }
 
     .hero-glow{
       position:absolute;
-      inset:0;
+      inset:26px 60px 0;
       background:
-        radial-gradient(circle at 8% 88%, rgba(142,0,42,.26), transparent 18%),
-        radial-gradient(circle at 20% 72%, rgba(243,107,0,.24), transparent 20%),
-        radial-gradient(circle at 34% 56%, rgba(246,197,28,.26), transparent 22%),
-        radial-gradient(circle at 48% 40%, rgba(67,64,213,.24), transparent 22%),
-        radial-gradient(circle at 60% 54%, rgba(81,199,235,.22), transparent 20%),
-        radial-gradient(circle at 74% 68%, rgba(100,227,176,.24), transparent 20%),
-        radial-gradient(circle at 90% 84%, rgba(215,240,58,.26), transparent 18%);
-      filter:blur(34px);
+        radial-gradient(circle at 10% 88%, rgba(142,0,42,.20), transparent 14%),
+        radial-gradient(circle at 22% 74%, rgba(243,107,0,.19), transparent 15%),
+        radial-gradient(circle at 35% 60%, rgba(246,197,28,.19), transparent 16%),
+        radial-gradient(circle at 47% 42%, rgba(67,64,213,.18), transparent 16%),
+        radial-gradient(circle at 59% 55%, rgba(81,199,235,.18), transparent 15%),
+        radial-gradient(circle at 73% 68%, rgba(100,227,176,.18), transparent 15%),
+        radial-gradient(circle at 89% 84%, rgba(215,240,58,.19), transparent 14%);
+      filter:blur(28px);
       opacity:1;
+      pointer-events:none;
     }
 
     .section{
@@ -393,9 +386,7 @@
       color:var(--brand-navy);
     }
 
-    .services-section{
-      padding:92px 0 58px;
-    }
+    .services-section{ padding:92px 0 58px; }
 
     .services-shell{
       display:grid;
@@ -575,12 +566,16 @@
 
     .service-tab[data-service="branding"].active,
     .service-tab[data-service="branding"]:hover{ color:#D62828; }
+
     .service-tab[data-service="webdev"].active,
     .service-tab[data-service="webdev"]:hover{ color:#003049; }
+
     .service-tab[data-service="marketing"].active,
     .service-tab[data-service="marketing"]:hover{ color:#F77F00; }
+
     .service-tab[data-service="strategy"].active,
     .service-tab[data-service="strategy"]:hover{ color:#111111; }
+
     .service-tab[data-service="ai"].active,
     .service-tab[data-service="ai"]:hover{ color:#c89314; }
 
@@ -788,10 +783,11 @@
 
     .consult-bar{
       width:calc(100% + 48px);
-      margin:0 0 18px -24px;
+      margin:0 0 0 -24px;
       background:var(--brand-yellow);
-      color:#fff;
-      padding:18px 24px;
+      padding:20px 24px;
+      border:none;
+      box-shadow:none;
     }
 
     .consult-bar-inner{
@@ -799,21 +795,12 @@
       margin:0 auto;
       display:flex;
       align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-
-    .consult-bar-text{
-      font-size:clamp(1rem,2vw,1.2rem);
-      font-weight:800;
-      letter-spacing:.03em;
-      text-transform:uppercase;
+      justify-content:center;
     }
 
     .consult-bar-button{
-      min-height:50px;
-      padding:0 24px;
+      min-height:54px;
+      padding:0 32px;
       border-radius:999px;
       background:var(--brand-navy);
       color:#fff;
@@ -823,6 +810,8 @@
       align-items:center;
       justify-content:center;
       white-space:nowrap;
+      font-size:15px;
+      text-transform:uppercase;
     }
 
     .projects-band{
@@ -833,7 +822,7 @@
       background:#ffffff;
       overflow:visible;
       isolation:isolate;
-      border:1px solid rgba(0,48,73,.08);
+      border:none;
     }
 
     .projects-stage{
@@ -888,19 +877,15 @@
     .project-card.tall{ grid-area:a; min-height:540px; border-radius:140px 34px 34px 34px; }
     .project-card.tall::before{ border-radius:136px 30px 30px 30px; }
     .project-card.tall img{ border-radius:132px 26px 26px 26px; }
-
     .project-card.arch{ grid-area:b; min-height:260px; border-radius:120px 120px 28px 28px; }
     .project-card.arch::before{ border-radius:116px 116px 24px 24px; }
     .project-card.arch img{ border-radius:112px 112px 20px 20px; }
-
     .project-card.soft{ grid-area:c; min-height:260px; border-radius:28px 90px 28px 90px; }
     .project-card.soft::before{ border-radius:24px 86px 24px 86px; }
     .project-card.soft img{ border-radius:20px 82px 20px 82px; }
-
     .project-card.wide{ grid-area:d; min-height:260px; border-radius:28px; }
     .project-card.wide::before{ border-radius:24px; }
     .project-card.wide img{ border-radius:20px; }
-
     .project-card.blob{ grid-area:e; min-height:260px; border-radius:34px 34px 120px 34px; }
     .project-card.blob::before{ border-radius:30px 30px 116px 30px; }
     .project-card.blob img{ border-radius:26px 26px 112px 26px; }
@@ -908,7 +893,7 @@
     .about-zone{
       margin-top:34px;
       padding:36px 0 10px;
-      border-top:1px solid rgba(0,48,73,.10);
+      border-top:none;
     }
 
     .about-lead{
@@ -938,9 +923,7 @@
       align-items:center;
     }
 
-    .about-copy-wrap{
-      padding:10px 8px 10px 0;
-    }
+    .about-copy-wrap{ padding:10px 8px 10px 0; }
 
     .about-panel h4{
       margin:0 0 10px;
@@ -1023,21 +1006,22 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      padding-top:22px;
-      border-top:1px solid rgba(0,48,73,.10);
+      padding-top:0;
+      border-top:none;
     }
 
     .cta-button{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:58px;
-      min-width:220px;
-      padding:0 32px;
-      border-radius:6px;
+      min-height:70px;
+      min-width:280px;
+      padding:0 40px;
+      border-radius:8px;
       background:var(--brand-navy);
       color:#fff;
-      font-weight:700;
+      font-weight:800;
+      font-size:18px;
       transition:background .2s ease,transform .2s ease;
     }
 
@@ -1050,7 +1034,7 @@
       width:calc(100% + 48px);
       margin-left:-24px;
       margin-right:-24px;
-      background:#ffffff;
+      background:linear-gradient(180deg, var(--brand-blue-panel) 0%, var(--brand-blue-deep) 100%);
       padding:72px 0;
       overflow:hidden;
       position:relative;
@@ -1059,19 +1043,20 @@
     .blog-wrap{
       position:relative;
       z-index:1;
-      width:min(100% - 48px, 1280px);
+      width:100%;
       margin:0 auto;
       display:grid;
       grid-template-columns:280px 1fr;
       gap:28px;
       align-items:start;
+      padding:0 24px;
     }
 
     .blog-side-title{
       font-size:clamp(2.8rem, 7vw, 5.6rem);
       line-height:.9;
       letter-spacing:-.08em;
-      color:var(--brand-navy);
+      color:#ffffff;
       text-transform:uppercase;
       position:sticky;
       top:40px;
@@ -1082,10 +1067,11 @@
       display:grid;
       gap:18px;
       min-height:240px;
+      width:100%;
     }
 
     .blog-intro{
-      color:var(--muted);
+      color:rgba(255,255,255,.84);
       font-size:15px;
       line-height:1.8;
       max-width:58ch;
@@ -1100,14 +1086,15 @@
       border:none;
       border-radius:0;
       backdrop-filter:none;
+      width:100%;
     }
 
     .blog-track{
       display:flex;
       width:max-content;
       gap:18px;
-      animation:blogScroll 38s linear infinite;
-      padding:0;
+      animation:blogScroll 34s linear infinite;
+      padding:0 24px 0 0;
       align-items:stretch;
     }
 
@@ -1117,11 +1104,11 @@
       background:#ffffff;
       border-radius:24px;
       padding:18px 18px 16px;
-      box-shadow:0 16px 30px rgba(0,0,0,.08);
+      box-shadow:0 16px 30px rgba(0,0,0,.14);
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      border:1px solid rgba(0,48,73,.08);
+      border:1px solid rgba(255,255,255,.12);
     }
 
     .blog-topic .kicker{
@@ -1201,6 +1188,7 @@
     }
 
     .contact-form-shell{ position:relative; }
+
     .contact-form{ display:grid; gap:16px; }
 
     .form-row{
@@ -1209,7 +1197,10 @@
       gap:14px;
     }
 
-    .field{ display:grid; gap:8px; }
+    .field{
+      display:grid;
+      gap:8px;
+    }
 
     .field label{
       font-size:13px;
@@ -1228,7 +1219,7 @@
       padding:0 16px;
       color:var(--text);
       outline:none;
-      transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+      transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
     }
 
     .textarea{
@@ -1254,7 +1245,9 @@
       gap:10px;
     }
 
-    .check-option{ position:relative; }
+    .check-option{
+      position:relative;
+    }
 
     .check-option input{
       position:absolute;
@@ -1300,7 +1293,7 @@
       font-weight:800;
       letter-spacing:.01em;
       cursor:pointer;
-      transition:transform .2s ease,background .2s ease;
+      transition:transform .2s ease, background .2s ease;
     }
 
     .contact-submit:hover{
@@ -1328,7 +1321,7 @@
       opacity:0;
       visibility:hidden;
       pointer-events:none;
-      transition:opacity .35s ease,visibility .35s ease;
+      transition:opacity .35s ease, visibility .35s ease;
       z-index:8;
     }
 
@@ -1389,7 +1382,6 @@
       gap:18px;
       color:var(--brand-navy);
       font-size:14px;
-      background:#ffffff;
     }
 
     .footer-copy{
@@ -1414,7 +1406,7 @@
       border:1px solid rgba(0,48,73,.16);
       background:rgba(0,48,73,.04);
       color:var(--brand-navy);
-      transition:transform .2s ease,background .2s ease,color .2s ease;
+      transition:transform .2s ease, background .2s ease, color .2s ease;
     }
 
     .footer-socials a:hover{
@@ -1452,9 +1444,16 @@
         grid-template-columns:1fr;
       }
 
-      .services-shell{ gap:16px; }
-      .services-content{ min-height:auto; padding-top:22px; }
-      .services-tabs{ justify-content:center; margin-inline:auto; }
+      .services-content{
+        min-height:auto;
+        padding-top:0;
+      }
+
+      .services-tabs{
+        justify-content:center;
+        margin-inline:auto;
+      }
+
       .services-panel{ min-height:unset; }
 
       .service-view{
@@ -1472,8 +1471,9 @@
         transform:translateX(0);
       }
 
-      .service-copy{text-align:center}
-      .service-copy h3,.service-copy p{ max-width:none; }
+      .service-copy{ text-align:center; }
+      .service-copy h3,
+      .service-copy p{ max-width:none; }
       .service-bullets{ justify-items:center; }
       .service-media{ margin-top:10px; }
 
@@ -1493,7 +1493,8 @@
         text-align:center;
       }
 
-      .footer-copy,.footer-links{
+      .footer-copy,
+      .footer-links{
         justify-content:center;
       }
     }
@@ -1510,44 +1511,27 @@
         letter-spacing:.08em;
       }
 
-      .menu-tab-line{
-        height:220px;
-      }
-
-      .content{ padding:16px; }
-
-      .hero{
-        padding:18px 0 4px;
-      }
+      .menu-tab-line{ height:220px; }
 
       .hero-copy h1{
-        font-size:clamp(2.2rem,11vw,4rem);
+        font-size:clamp(2.5rem,11vw,4rem);
         max-width:100%;
       }
 
-      .hero-copy p{
-        font-size:15px;
-      }
+      .hero-copy p{ font-size:15px; }
 
       .hero-showcase{
-        margin-top:0;
-        min-height:220px;
+        max-width:100%;
+        min-height:180px;
       }
 
       .hero-ribbon{
-        min-height:220px;
+        height:180px;
+        max-width:100%;
       }
 
-      .hero-sweep.s1{ height:124px; }
-      .hero-sweep.s2{ height:160px; }
-      .hero-sweep.s3{ height:205px; }
-      .hero-sweep.s4{ height:240px; }
-      .hero-sweep.s5{ height:210px; }
-      .hero-sweep.s6{ height:170px; }
-      .hero-sweep.s7{ height:132px; }
-
-      .services-section{
-        padding:78px 0 58px;
+      .hero-glow{
+        inset:18px 12px 0;
       }
 
       .services-tabs{
@@ -1566,84 +1550,6 @@
       .service-tab svg{
         width:26px;
         height:26px;
-      }
-
-      .services-visual{
-        min-height:430px;
-        justify-content:center;
-      }
-
-      .services-photo-stage{
-        height:410px;
-        margin-left:0;
-      }
-
-      .services-photo-card{
-        left:52px;
-        width:214px;
-        height:292px;
-      }
-
-      .services-blob-yellow{
-        left:28px;
-        width:172px;
-        height:172px;
-        bottom:90px;
-      }
-
-      .services-tagline{
-        font-size:clamp(1.45rem, 8vw, 2.2rem);
-        max-width:9ch;
-        left:8px;
-      }
-
-      .service-media{
-        height:330px;
-      }
-
-      .service-media-card{
-        left:50%;
-        transform:translateX(-50%);
-        width:210px;
-        height:288px;
-      }
-
-      .service-media-shape{
-        left:50%;
-        transform:translateX(-56%);
-        width:172px;
-        height:172px;
-      }
-
-      .service-media-dots{
-        left:50%;
-        transform:translateX(-88%);
-      }
-
-      .service-media-label{
-        left:50%;
-        transform:translateX(-50%);
-        text-align:center;
-      }
-
-      .consult-bar{
-        width:calc(100% + 32px);
-        margin-left:-16px;
-        padding:16px;
-      }
-
-      .consult-bar-inner{
-        justify-content:center;
-        text-align:center;
-      }
-
-      .projects-band{
-        padding:22px 10px 22px;
-        border-radius:24px;
-      }
-
-      .projects-stage{
-        padding:16px 4px 18px;
       }
 
       .project-grid{
@@ -1684,24 +1590,15 @@
         border-radius:18px;
       }
 
-      .about-zone{
-        margin-top:24px;
-        padding-top:28px;
+      .cta-button{
+        min-width:240px;
+        min-height:64px;
+        font-size:17px;
       }
 
-      .about-photo-wrap{
-        min-height:320px;
-      }
-
-      .about-photo{
-        min-height:320px;
-      }
-
-      .about-photo img{
-        min-height:312px;
-      }
-
-      .cta-band,.form-row,.phone-grid,.service-checks{
+      .form-row,
+      .phone-grid,
+      .service-checks{
         grid-template-columns:1fr;
       }
 
@@ -1712,7 +1609,11 @@
       }
 
       .blog-wrap{
-        width:min(100% - 24px, 1280px);
+        padding:0 16px;
+      }
+
+      .blog-track{
+        padding-right:16px;
       }
 
       .blog-topic{
@@ -1726,7 +1627,6 @@
     <aside class="menu-panel" id="sideMenu">
       <div class="brand-box">
         <a class="brand" href="#hero">The Boss Agency Co</a>
-
         <div class="nav-stack">
           <a class="nav-link" href="#projects"><span>Projects</span><small>01</small></a>
           <a class="nav-link" href="#about"><span>About</span><small>02</small></a>
@@ -1737,21 +1637,24 @@
       </div>
 
       <div class="menu-socials">
-        <a href="https://www.instagram.com/thebossagencyco/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <a href="#" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95Zm8.95 1.55a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.35A5.65 5.65 0 1 1 6.35 12 5.66 5.66 0 0 1 12 6.35Zm0 1.8A3.85 3.85 0 1 0 15.85 12 3.85 3.85 0 0 0 12 8.15Z"/>
           </svg>
         </a>
-
-        <a href="https://www.facebook.com/bossagencyco" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <a href="#" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.92.26-1.55 1.58-1.55h1.69V4.15c-.29-.04-1.28-.12-2.44-.12-2.42 0-4.08 1.48-4.08 4.2v2.37H7.5v3.2h2.75V22z"/>
           </svg>
         </a>
-
-        <a href="https://www.linkedin.com/company/thebossagencyco" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <a href="#" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48 2.49 2.49 0 0 1 4.98 3.5ZM3 9h4v12H3Zm6.5 0h3.83v1.64h.05c.53-1.01 1.83-2.08 3.77-2.08 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.58c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94V21h-4Z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.5 7.2a3 3 0 0 0-2.11-2.12C19.52 4.5 12 4.5 12 4.5s-7.52 0-9.39.58A3 3 0 0 0 .5 7.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 4.8 3 3 0 0 0 2.11 2.12C4.48 19.5 12 19.5 12 19.5s7.52 0 9.39-.58a3 3 0 0 0 2.11-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-4.8ZM9.6 15.3V8.7l6 3.3Z"/>
           </svg>
         </a>
       </div>
@@ -2040,10 +1943,9 @@
         </div>
       </section>
 
-      <section class="consult-bar">
+      <section class="consult-bar" aria-label="Book a consultation">
         <div class="consult-bar-inner">
-          <div class="consult-bar-text">Ready to move your brand forward?</div>
-          <a class="consult-bar-button" href="https://api.leadconnectorhq.com/widget/booking/o7aHq4SlQ1zsKOOMzJwX" target="_blank" rel="noopener noreferrer">BOOK AN CONLSUTAN</a>
+          <a class="consult-bar-button" href="#contact">Book a Consultation</a>
         </div>
       </section>
 
@@ -2069,7 +1971,7 @@
                 <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image four" />
               </article>
 
-              <article class="project-card blob">
+              <article class="project-card.blob">
                 <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Project showcase image five" />
               </article>
             </div>
@@ -2102,7 +2004,7 @@
               </div>
 
               <div class="cta-band">
-                <a class="cta-button" href="#contact">Let’s talk</a>
+                <a class="cta-button" href="#contact">Let’s Talk</a>
               </div>
             </div>
           </section>
@@ -2121,53 +2023,73 @@
             <div class="blog-marquee">
               <div class="blog-track">
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>How branding changes perceived value</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>How branding changes perceived value</h3>
+                  </div>
                 </article>
 
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>What makes a website feel premium</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>What makes a website feel premium</h3>
+                  </div>
                 </article>
 
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>Social content that actually supports growth</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>Social content that actually supports growth</h3>
+                  </div>
                 </article>
 
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>Why clear strategy beats more content</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>Why clear strategy beats more content</h3>
+                  </div>
                 </article>
 
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>Using AI without losing the brand voice</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>Using AI without losing the brand voice</h3>
+                  </div>
                 </article>
 
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>How branding changes perceived value</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>How branding changes perceived value</h3>
+                  </div>
                 </article>
 
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>What makes a website feel premium</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>What makes a website feel premium</h3>
+                  </div>
                 </article>
 
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>Social content that actually supports growth</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>Social content that actually supports growth</h3>
+                  </div>
                 </article>
 
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>Why clear strategy beats more content</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>Why clear strategy beats more content</h3>
+                  </div>
                 </article>
 
                 <article class="blog-topic">
-                  <div class="kicker">Topic</div>
-                  <h3>Using AI without losing the brand voice</h3>
+                  <div>
+                    <div class="kicker">Topic</div>
+                    <h3>Using AI without losing the brand voice</h3>
+                  </div>
                 </article>
               </div>
             </div>
@@ -2292,21 +2214,24 @@
         <div class="footer-copy">© 2026 The Boss Agency Co</div>
 
         <div class="footer-socials">
-          <a href="https://www.instagram.com/thebossagencyco/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="#" aria-label="Instagram">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95Zm8.95 1.55a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.35A5.65 5.65 0 1 1 6.35 12 5.66 5.66 0 0 1 12 6.35Zm0 1.8A3.85 3.85 0 1 0 15.85 12 3.85 3.85 0 0 0 12 8.15Z"/>
             </svg>
           </a>
-
-          <a href="https://www.facebook.com/bossagencyco" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a href="#" aria-label="Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M13.5 22v-8.2h2.76l.41-3.2H13.5V8.56c0-.92.26-1.55 1.58-1.55h1.69V4.15c-.29-.04-1.28-.12-2.44-.12-2.42 0-4.08 1.48-4.08 4.2v2.37H7.5v3.2h2.75V22z"/>
             </svg>
           </a>
-
-          <a href="https://www.linkedin.com/company/thebossagencyco" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="#" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48 2.49 2.49 0 0 1 4.98 3.5ZM3 9h4v12H3Zm6.5 0h3.83v1.64h.05c.53-1.01 1.83-2.08 3.77-2.08 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.58c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94V21h-4Z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.5 7.2a3 3 0 0 0-2.11-2.12C19.52 4.5 12 4.5 12 4.5s-7.52 0-9.39.58A3 3 0 0 0 .5 7.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 4.8 3 3 0 0 0 2.11 2.12C4.48 19.5 12 19.5 12 19.5s7.52 0 9.39-.58a3 3 0 0 0 2.11-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-4.8ZM9.6 15.3V8.7l6 3.3Z"/>
             </svg>
           </a>
         </div>
@@ -2348,9 +2273,7 @@
         tab.setAttribute('aria-selected', 'true');
 
         const activeView = document.querySelector(`.service-view[data-view="${target}"]`);
-        if (activeView) {
-          activeView.classList.add('active');
-        }
+        if (activeView) activeView.classList.add('active');
       });
     });
 
