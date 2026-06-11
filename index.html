@@ -1000,15 +1000,15 @@
     }
 
     .blog-side-title{
-      font-size:clamp(2.8rem, 7vw, 5.6rem);
-      line-height:.9;
-      letter-spacing:-.08em;
-      color:#ffffff;
-      text-transform:uppercase;
-      position:sticky;
-      top:40px;
-      text-align:left;
-    }
+  font-size:clamp(2.8rem, 7vw, 5.6rem);
+  line-height:.9;
+  letter-spacing:-.08em;
+  color:#ffffff;
+  text-transform:uppercase;
+  position:sticky;
+  top:10px;
+  text-align:left;
+}
 
     .blog-board{
       display:grid;
@@ -1023,69 +1023,84 @@
       max-width:58ch;
     }
 
-    .blog-marquee{
-      position:relative;
-      overflow:hidden;
-      border-radius:28px;
-      padding:22px 0;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.14);
-      backdrop-filter:blur(10px);
-      min-height:220px;
-    }
+    .blog-topics-static{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-top:18px;
+}
 
-    .blog-track{
-      display:flex;
-      width:max-content;
-      gap:18px;
-      animation:blogScroll 38s linear infinite;
-      padding:0 18px;
-      align-items:stretch;
-    }
+.blog-topic{
+  flex:0 0 260px;
+  min-height:170px;
+  background:#ffffff;
+  border-radius:24px;
+  padding:18px 18px 16px;
+  box-shadow:0 16px 30px rgba(0,0,0,.18);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transform-origin:bottom center;
+  animation:blogPop 0.6s ease-out forwards;
+  opacity:0;
+  transform:translateY(40px);
+}
 
-    .blog-topic{
-      flex:0 0 320px;
-      min-height:170px;
-      background:#ffffff;
-      border-radius:24px;
-      padding:18px 18px 16px;
-      box-shadow:0 16px 30px rgba(0,0,0,.12);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
+.blog-topic .kicker{
+  color:var(--brand-orange);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
 
-    .blog-topic .kicker{
-      color:var(--brand-orange);
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      margin-bottom:10px;
-    }
+.blog-topic h3{
+  margin:0;
+  color:var(--brand-navy);
+  font-size:1.1rem;
+  line-height:1.1;
+  letter-spacing:-.04em;
+  max-width:16ch;
+}
 
-    .blog-topic h3{
-      margin:0;
-      color:var(--brand-navy);
-      font-size:1.28rem;
-      line-height:1.08;
-      letter-spacing:-.04em;
-      max-width:14ch;
-    }
+.blog-topic .topic-box{
+  margin-top:18px;
+  min-height:74px;
+  border-radius:18px;
+  background:
+    linear-gradient(135deg, rgba(0,48,73,.08), rgba(247,127,0,.10), rgba(252,191,73,.18));
+  border:1px solid rgba(0,48,73,.08);
+}
 
-    .blog-topic .topic-box{
-      margin-top:18px;
-      min-height:74px;
-      border-radius:18px;
-      background:
-        linear-gradient(135deg, rgba(0,48,73,.08), rgba(247,127,0,.10), rgba(252,191,73,.18));
-      border:1px solid rgba(0,48,73,.08);
-    }
+.tilt-1{
+  transform:translateY(40px) rotate(-3deg);
+}
 
-    @keyframes blogScroll{
-      0%{ transform:translateX(0); }
-      100%{ transform:translateX(-50%); }
-    }
+.tilt-2{
+  transform:translateY(40px) rotate(2deg);
+}
+
+.tilt-3{
+  transform:translateY(40px) rotate(-1deg);
+}
+
+.blog-topic:nth-child(1){ animation-delay:0.0s; }
+.blog-topic:nth-child(2){ animation-delay:0.08s; }
+.blog-topic:nth-child(3){ animation-delay:0.16s; }
+.blog-topic:nth-child(4){ animation-delay:0.24s; }
+.blog-topic:nth-child(5){ animation-delay:0.32s; }
+
+@keyframes blogPop{
+  0%{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
     .contact-section{
       position:relative;
@@ -1889,90 +1904,47 @@
               A space for insights, strategy notes, marketing ideas, branding direction, and the kind of conversations that help business owners make cleaner decisions.
             </p>
 
-            <div class="blog-marquee">
-              <div class="blog-track">
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>How branding changes perceived value</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
+           <div class="blog-topics-static">
+  <article class="blog-topic tilt-1">
+    <div>
+      <div class="kicker">Branding</div>
+      <h3>What “premium” actually looks like for small businesses.</h3>
+    </div>
+    <div class="topic-box"></div>
+  </article>
 
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>What makes a website feel premium</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
+  <article class="blog-topic tilt-2">
+    <div>
+      <div class="kicker">Web</div>
+      <h3>Why most websites feel cluttered (and how to fix it).</h3>
+    </div>
+    <div class="topic-box"></div>
+  </article>
 
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Social content that actually supports growth</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
+  <article class="blog-topic tilt-3">
+    <div>
+      <div class="kicker">Marketing</div>
+      <h3>A simple structure for your next launch.</h3>
+    </div>
+    <div class="topic-box"></div>
+  </article>
 
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Why clear strategy beats more content</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
+  <article class="blog-topic tilt-2">
+    <div>
+      <div class="kicker">Systems</div>
+      <h3>Keeping your ops lightweight but documented.</h3>
+    </div>
+    <div class="topic-box"></div>
+  </article>
 
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Using AI without losing the brand voice</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
-
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>How branding changes perceived value</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
-
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>What makes a website feel premium</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
-
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Social content that actually supports growth</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
-
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Why clear strategy beats more content</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
-
-                <article class="blog-topic">
-                  <div>
-                    <div class="kicker">Topic</div>
-                    <h3>Using AI without losing the brand voice</h3>
-                  </div>
-                  <div class="topic-box"></div>
-                </article>
-              </div>
-            </div>
-          </div>
+  <article class="blog-topic tilt-1">
+    <div>
+      <div class="kicker">AI</div>
+      <h3>Where AI actually helps in small teams.</h3>
+    </div>
+    <div class="topic-box"></div>
+  </article>
+</div>
         </div>
       </section>
 
